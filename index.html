@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <meta charset="utf-8">
-    <title>HIMTIKA - Himpunan Mahasiswa Informatika Unsika</title>
+    <title>Struktur Organisasi ー HIMTIKA ー Himpunan Mahasiswa Informatika Unsika</title>
 
-    <meta name="description" content="Rangkaian acara yang diselenggarakan untuk memperingati hari lahirnya HIMTIKA" />
-    <meta name="keywords" content="HIMTIKA, Dies Natalis VIII, Himpunan Mahasiswa Informatika, UNSIKA, Informatika" />
+    <meta name="description" content="Kenali struktur organisasi, pengurus, departemen, dan program kerja HIMTIKA UNSIKA periode 2025–2026." />
+    <meta name="keywords" content="Struktur Organisasi HIMTIKA, HIMTIKA, Himpunan Mahasiswa Informatika, UNSIKA, Informatika" />
 
     <!-- Stylesheets -->
     <link href="assets/css/style.css" rel="stylesheet">
@@ -121,7 +121,7 @@
                                                 <li><a href="https://himtika.cs.unsika.ac.id/pekan-it/" target="_blank">Pekan IT: NIC</a></li>
                                                 <li><a href="https://himtika.cs.unsika.ac.id/pekan-it/detail-semantik/" target="_blank">Pekan IT: Semantik IC</a></li>
                                                 <li><a href="https://himtika.cs.unsika.ac.id/lkmmpd/" target="_blank">LKMM-PD</a></li>
-                                                <li><a href="https://himtika.cs.unsika.ac.id/diesnatalis/" target="_blank">Diesnatalis</a></li>
+                                                <li><a href="https://himtika.cs.unsika.ac.id/diesnatalis/" target="_blank">Dies Natalis</a></li>
                                                 <li><a href="https://himtika.cs.unsika.ac.id/it-bootcamp/" target="_blank">IT Bootcamp</a></li>
                                             </ul>
                                         </li>
@@ -177,329 +177,51 @@
         </header>
         <!-- End Main Header -->
 
-        <!-- ==================== HERO SECTION ==================== -->
-        <section class="hero-section">
-            <div class="hero-bg">
-                <img src="assets/img/background/bg_wave.png" alt="Wave Background" class="wave-bg">
+        <main class="main-section">
+            <section class="hero-section" aria-labelledby="heroTitle">
+                <div class="hero-glow floating-glow-2"></div>
+                <img src="assets/img/background/bg_wave.png" alt="" class="wave-bg" aria-hidden="true">
+                <div class="hero-content padding-x-section">
+                    <div class="hero-text">
+                        <p class="section-tag">Struktur Organisasi</p>
+                        <h1 class="hero-title" id="heroTitle">Di Balik HIMTIKA</h1>
+                        <p class="hero-desc">Jelajahi Steering Committee dan setiap divisi HIMTIKA untuk mengenal pengurus, departemen, serta program kerja yang dijalankan.</p>
+                    </div>
+                    <div class="slider-viewport" id="divisionViewport">
+                        <div class="division-slider" id="divisionSlider"></div>
+                    </div>
+                    <div class="slider-controls" aria-label="Navigasi struktur organisasi">
+                        <button class="slider-nav" id="prevBtn" type="button" aria-label="Pilihan sebelumnya"><i class="fas fa-chevron-left"></i></button>
+                        <div class="slider-dots" id="sliderDots"></div>
+                        <button class="slider-nav" id="nextBtn" type="button" aria-label="Pilihan berikutnya"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="about-section padding-x-section" id="about" aria-labelledby="aboutTitle">
+                <div class="about-glow floating-glow-2"></div>
+                <div class="section-heading">
+                    <p class="section-eyebrow">Kenali Lebih Dalam</p>
+                    <h2 class="section-title" id="aboutTitle">Tentang <span id="aboutDivisionName">Divisi RnD</span></h2>
+                </div>
+                <div id="leaderCards" class="leader-cards"></div>
+            </section>
+
+            <section class="sc-management padding-x-section" id="scManagement" hidden>
+                <div id="secretarySection" class="management-row"></div>
+                <div id="treasurerSection" class="management-row management-row-reverse"></div>
+            </section>
+
+            <div id="divisionContent">
+                <section class="departments-section padding-x-section" id="departmentsSection" aria-label="Departemen divisi"></section>
+                <section class="program-section padding-x-section" id="programSection" aria-labelledby="programTitle">
+                    <div class="section-heading section-heading-center">
+                        <h2 class="section-title" id="programTitle">Program Kerja <span id="programDivisionName">Divisi RnD</span></h2>
+                    </div>
+                    <div class="program-showcase" id="programShowcase"></div>
+                </section>
             </div>
-            <div class="hero-overlay"></div>
-
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h2 class="section-tag">STRUKTUR ORGANISASI</h2>
-                    <h1 class="hero-title">Di Balik HIMTIKA</h1>
-                    <p class="hero-desc">
-                        Jelajahi setiap divisi HIMTIKA untuk melihat anggota, departemen, serta berbagai program kerja yang dijalankan oleh setiap divisi.
-                    </p>
-                </div>
-
-                <!-- Slider -->
-                <div class="slider-wrapper">
-                    <div class="division-slider" id="divisionSlider"></div>
-                </div>
-
-                <!-- Controls: prev button - dots - next button -->
-                <div class="slider-controls">
-                    <button class="slider-nav prev" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
-                    <div class="slider-dots" id="sliderDots"></div>
-                    <button class="slider-nav next" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
-                </div>
-            </div>
-        </section>
-        <!--- ==================== HERO SECTION END ==================== -->
-
-        <!-- ==================== ABOUT SECTION ==================== -->
-        <section class="about-section" id="about">
-            <div class="about-container">
-                <!-- Section Label -->
-                <div class="about-label">
-                    <span>KENALI LEBIH DALAM</span>
-                </div>
-
-                <!-- Section Title (dinamis, berubah sesuai slider) -->
-                <h2 class="about-title">
-                    Tentang <span class="about-title-highlight" id="aboutDivisionName">Divisi RnD</span>
-                </h2>
-
-                <!-- Card Utama -->
-                <div class="about-card" id="aboutCard">
-                    <!-- Background dekorasi: icon khas tiap divisi -->
-                    <div class="about-card-bg-icon">
-                        <img
-                            src="assets/img/icon/icon_rnd.png"
-                            alt=""
-                            class="about-bg-icon-img"
-                            id="aboutBgIcon"
-                            onerror="this.style.display='none'"
-                        >
-                    </div>
-
-                    <!-- Kiri: Konten teks -->
-                    <div class="about-card-left">
-                        <h3 class="about-card-title" id="aboutCardTitle">Kenali Lebih Dalam<br>Tentang <span class="about-gold" id="aboutCardSpan">Divisi RnD</span></h3>
-                        <p class="about-card-desc" id="aboutCardDesc">
-                            Divisi Research and Development (RnD) merupakan divisi yang menjadi ujung tombak dalam penerapan teknologi informasi. Divisi ini fokus pada peningkatan kualitas di lingkungan HIMTIKA dan program studi Informatika UNSIKA. Selain itu, RnD juga berperan sebagai IT Support untuk mendukung optimalisasi kinerja HIMTIKA.
-                        </p>
-                        <div class="about-dept-label">Departemen yang dimiliki yaitu:</div>
-                        <ul class="about-dept-list" id="aboutDeptList">
-                            <li><img src="assets/img/icon/icon_frame.png" alt="" class="dept-icon"> Departemen <span class="about-gold">Research Development</span></li>
-                            <li><img src="assets/img/icon/icon_frame.png" alt="" class="dept-icon"> Departemen <span class="about-gold">Product Development</span></li>
-                        </ul>
-                    </div>
-
-                    <!-- Kanan: Foto Kadiv -->
-                    <div class="about-card-right">
-                        <div class="about-kadiv-photo-wrap">
-                            <img
-                                src="assets/img/divisi/kadiv_rnd.png"
-                                alt="Ketua Divisi RnD"
-                                class="about-kadiv-photo"
-                                id="aboutKadivPhoto"
-                                style="--photo-scale: 1.35; --photo-pos-y: 0%;"
-                                onerror="this.src='assets/img/logo/Himtika.png'"
-                            >
-                            <div class="about-kadiv-badge" id="aboutKadivBadge">
-                                <span class="badge-name"><span id="badgeFirstName">Raika</span> <strong id="badgeLastName">Maulana Dwi Putra</strong></span>
-                                <span class="badge-role" id="badgeRole">Ketua Divisi RnD</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card Tambahan: Wakil Ketua (khusus Steering Committee, foto di kiri) -->
-                <div class="about-card about-card-mirror" id="aboutCardWakil" style="display: none;">
-                    <!-- Background dekorasi -->
-                    <div class="about-card-bg-icon">
-                        <img
-                            src=""
-                            alt=""
-                            class="about-bg-icon-img"
-                            id="aboutWakilBgIcon"
-                            onerror="this.style.display='none'"
-                        >
-                    </div>
-
-                    <!-- Kiri (secara visual): Konten teks -->
-                    <div class="about-card-left">
-                        <h3 class="about-card-title" id="aboutWakilCardTitle">Kenali Lebih Dalam<br>Tentang <span class="about-gold" id="aboutWakilCardSpan">Wakil Ketua</span></h3>
-                        <p class="about-card-desc" id="aboutWakilCardDesc"></p>
-                        <div class="about-dept-label" id="aboutWakilPeranLabel">Peran Wakil Ketua Himpunan yaitu:</div>
-                        <ul class="about-peran-grid" id="aboutWakilPeranGrid"></ul>
-                    </div>
-
-                    <!-- Kanan di markup, tapi tampil di kiri karena row-reverse: Foto Wakil Ketua -->
-                    <div class="about-card-right">
-                        <div class="about-kadiv-photo-wrap">
-                            <img
-                                src=""
-                                alt="Wakil Ketua Himpunan"
-                                class="about-kadiv-photo"
-                                id="aboutWakilPhoto"
-                                onerror="this.src='assets/img/logo/Himtika.png'"
-                            >
-                            <div class="about-kadiv-badge" id="aboutWakilBadge">
-                                <span class="badge-name"><span id="badgeWakilFirstName"></span> <strong id="badgeWakilLastName"></strong></span>
-                                <span class="badge-role" id="badgeWakilRole"></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card Tambahan: Administrasi Sekretaris (khusus Steering Committee) -->
-                <div class="about-card" id="aboutCardSekretaris" style="display: none;">
-                    <!-- Background dekorasi -->
-                    <div class="about-card-bg-icon">
-                        <img
-                            src=""
-                            alt=""
-                            class="about-bg-icon-img"
-                            id="aboutSekretarisBgIcon"
-                            onerror="this.style.display='none'"
-                        >
-                    </div>
-
-                    <!-- Kiri: Konten teks -->
-                    <div class="about-card-left">
-                        <div class="about-dept-label-small" id="aboutSekretarisLabel">Administrasi</div>
-                        <h3 class="about-card-title-alt" id="aboutSekretarisTitle">Sekretaris</h3>
-                        <p class="about-card-desc" id="aboutSekretarisDesc"></p>
-                        <div class="about-dept-label" id="aboutSekretarisPeranLabel">Peran Sekretaris yaitu:</div>
-                        <ul class="about-peran-grid" id="aboutSekretarisPeranGrid"></ul>
-                    </div>
-
-                    <!-- Kanan: Foto Sekretaris Umum & Wakil Sekretaris Umum -->
-                    <div class="sekretaris-photo-group" id="aboutSekretarisMemberGrid"></div>
-                </div>
-
-                <!-- Card Tambahan: Keuangan Bendahara (khusus Steering Committee, foto di kiri) -->
-                <div class="about-card about-card-mirror" id="aboutCardBendahara" style="display: none;">
-                    <!-- Background dekorasi -->
-                    <div class="about-card-bg-icon">
-                        <img
-                            src=""
-                            alt=""
-                            class="about-bg-icon-img"
-                            id="aboutBendaharaBgIcon"
-                            onerror="this.style.display='none'"
-                        >
-                    </div>
-
-                    <!-- Kiri secara markup (tampil di kanan karena row-reverse): Konten teks -->
-                    <div class="about-card-left">
-                        <div class="about-dept-label-small" id="aboutBendaharaLabel">Keuangan</div>
-                        <h3 class="about-card-title-alt" id="aboutBendaharaTitle">Bendahara</h3>
-                        <p class="about-card-desc" id="aboutBendaharaDesc"></p>
-                        <div class="about-dept-label" id="aboutBendaharaPeranLabel">Peran Bendahara yaitu:</div>
-                        <ul class="about-peran-grid" id="aboutBendaharaPeranGrid"></ul>
-                    </div>
-
-                    <!-- Kanan secara markup, tapi tampil di kiri karena row-reverse: Foto Bendahara Umum & Wakil Bendahara -->
-                    <div class="sekretaris-photo-group" id="aboutBendaharaMemberGrid"></div>
-                </div>
-            </div>
-        </section>
-        <!-- ==================== ABOUT SECTION END ==================== -->
-
-        <!-- ==================== DEPARTMENT SECTION 1 ==================== -->
-        <section class="dept-section" id="deptSection1">
-            <div class="dept-glow"></div>
-            <div class="dept-container">
-                <div class="dept-section-label">Departemen</div>
-                <h2 class="dept-section-name">Research Development</h2>
-                <p class="dept-section-desc">Mengembangkan ide, melakukan riset, serta merancang inovasi dan solusi untuk pengembangan produk maupun layanan.</p>
-
-                <div class="member-`grid">
-                    <div class="member-card">
-                        <img src="assets/img/divisi/rnd_card.png" alt="Raika Maulana Dwi Putra" class="member-photo" onerror="this.src='assets/img/logo/Himtika.png'">
-                        <div class="member-info">
-                            <h4 class="member-name"><span class="member-name-gold">Raika</span> Maulana Dwi Putra</h4>
-                            <p class="member-role">Ketua Divisi RnD</p>
-                        </div>
-                    </div>
-                    <div class="member-card">
-                        <img src="assets/img/anggota/rnd/rafisyah.png" alt="M Rafisyah Rizkiyawan" class="member-photo" onerror="this.src='assets/img/logo/Himtika.png'">
-                        <div class="member-info">
-                            <h4 class="member-name">M <span class="member-name-gold">Rafisyah</span> Rizkiyawan</h4>
-                            <p class="member-role">Ketua Dept Research</p>
-                        </div>
-                    </div>
-                    <div class="member-card">
-                        <img src="assets/img/anggota/rnd/rafli.png" alt="Rafli Rizqi Fadillah" class="member-photo" onerror="this.src='assets/img/logo/Himtika.png'">
-                        <div class="member-info">
-                            <h4 class="member-name"><span class="member-name-gold">Rafli</span> Rizqi Fadillah</h4>
-                            <p class="member-role">Ketua Dept Product</p>
-                        </div>
-                    </div>
-                    <div class="member-card">
-                        <img src="assets/img/anggota/rnd/ali.png" alt="Mohammed Ali Irsyad Ginting" class="member-photo" onerror="this.src='assets/img/logo/Himtika.png'">
-                        <div class="member-info">
-                            <h4 class="member-name">Mohammed Ali <span class="member-name-gold">Irsyad</span> Ginting</h4>
-                            <p class="member-role">Anggota Dept Research</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- ==================== DEPARTMENT SECTION 1 END ==================== -->
-
-        <!-- ==================== DEPARTMENT SECTION 2 ==================== -->
-        <section class="dept-section" id="deptSection2">
-            <div class="dept-glow"></div>
-            <div class="dept-container">
-                <div class="dept-section-label">Departemen</div>
-                <h2 class="dept-section-name">Product Development</h2>
-                <p class="dept-section-desc">Merancang, membangun, dan menyempurnakan produk digital HIMTIKA mulai dari konsep hingga implementasi yang siap digunakan.</p>
-
-                <div class="member-grid">
-                    <div class="member-card">
-                        <img src="assets/img/anggota/rnd/anggota1.png" alt="Nama Ketua Dept" class="member-photo" onerror="this.src='assets/img/logo/Himtika.png'">
-                        <div class="member-info">
-                            <h4 class="member-name"><span class="member-name-gold">Nama</span> Ketua Dept</h4>
-                            <p class="member-role">Ketua Dept Product</p>
-                        </div>
-                    </div>
-                    <div class="member-card">
-                        <img src="assets/img/anggota/rnd/anggota2.png" alt="Nama Anggota" class="member-photo" onerror="this.src='assets/img/logo/Himtika.png'">
-                        <div class="member-info">
-                            <h4 class="member-name"><span class="member-name-gold">Nama</span> Anggota</h4>
-                            <p class="member-role">Anggota Dept Product</p>
-                        </div>
-                    </div>
-                    <div class="member-card">
-                        <img src="assets/img/anggota/rnd/anggota3.png" alt="Nama Anggota" class="member-photo" onerror="this.src='assets/img/logo/Himtika.png'">
-                        <div class="member-info">
-                            <h4 class="member-name"><span class="member-name-gold">Nama</span> Anggota</h4>
-                            <p class="member-role">Anggota Dept Product</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- ==================== DEPARTMENT SECTION 2 END ==================== -->
-
-        <!-- ==================== PROKER SECTION ==================== -->
-        <!-- Konten section ini dinamis, diisi oleh updateProkerSection() di script.js
-            mengikuti divisi aktif pada slider utama. Tiap departemen punya jumlah
-            proker yang berbeda (2-5), dinavigasi lewat arrow & thumbnail di kanan. -->
-        <section class="proker-section" id="prokerSection">
-            <div class="proker-container">
-                <h2 class="proker-section-title">
-                    Program Kerja <span class="proker-section-title-highlight">Divisi RnD</span>
-                </h2>
-
-                <div class="proker-card">
-                    <!-- Kiri: Informasi Proker -->
-                    <div class="proker-card-left">
-                        <div class="proker-dept-label">Dept. Research Development</div>
-                        <h3 class="proker-title">Software House</h3>
-                        <p class="proker-pic">Penanggung Jawab: Nanang Saepudin</p>
-                        <p class="proker-desc">Software House adalah program kerja yang berfokus pada penelitian dan pengembangan produk digital HIMTIKA berupa website dan aplikasi mobile. Program ini menjadi wadah bagi mahasiswa Informatika untuk menyampaikan ide atau kebutuhan yang kemudian dianalisis dan dikembangkan bersama HIMTIKA Software Development menjadi produk digital yang bermanfaat.</p>
-                        <a href="#" class="proker-learn-more">Learn More <i class="fas fa-arrow-up-right-from-square"></i></a>
-                    </div>
-
-                    <!-- Kanan: Foto besar + thumbnail + navigasi -->
-                    <div class="proker-card-right">
-                        <img
-                            src="assets/img/proker/rnd/software_house_main.png"
-                            alt="Software House"
-                            class="proker-main-img"
-                            onerror="this.src='assets/img/logo/Himtika.png'"
-                        >
-
-                        <div class="proker-thumbs" id="prokerThumbs">
-                            <!-- thumbnail proker lain, diisi via JS -->
-                        </div>
-
-                        <div class="proker-nav-row">
-                            <div class="proker-counter">
-                                Program Kerja <span class="proker-counter-current">1</span>/<span class="proker-counter-total">3</span>
-                            </div>
-                            <div class="proker-nav-line"></div>
-                            <div class="proker-nav-buttons">
-                                <button class="proker-nav-btn prev" id="prokerPrevBtn" type="button" aria-label="Program kerja sebelumnya">
-                                    <i class="fas fa-chevron-left"></i>
-                                </button>
-                                <button class="proker-nav-btn next" id="prokerNextBtn" type="button" aria-label="Program kerja berikutnya">
-                                    <i class="fas fa-chevron-right"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- ==================== PROKER SECTION END ==================== -->
-
-        <!-- Back To Top Button -->
-        <button class="button back-to-top" id="backToTop">
-            <svg class="svg" xmlns="http://www.w3.org/2000/svg" height="25px" viewBox="0 -960 960 960" width="25px" fill="#000000">
-                <path d="M440-160v-487L216-423l-56-57 320-320 320 320-56 57-224-224v487h-80Z"></path>
-            </svg>
-        </button>
-        <!-- Back To Top Button -->
-
-
-        <!----Start Footer-->
+        </main>
         <footer class="site-footer">
             <div class="footer-container">
                 <div class="footer-main-row">
@@ -568,7 +290,7 @@
                                         <li><a href="https://himtika.cs.unsika.ac.id/pekan-it/" target="_blank">Pekan IT: NIC</a></li>
                                         <li><a href="https://himtika.cs.unsika.ac.id/pekan-it/detail-semantik/" target="_blank">Pekan IT: Semantik IC</a></li>
                                         <li><a href="https://himtika.cs.unsika.ac.id/lkmmpd/" target="_blank">LKMM-PD</a></li>
-                                        <li><a href="https://himtika.cs.unsika.ac.id/diesnatalis/" target="_blank">Diesnatalis</a></li>
+                                        <li><a href="https://himtika.cs.unsika.ac.id/diesnatalis/" target="_blank">Dies Natalis</a></li>
                                         <li><a href="https://himtika.cs.unsika.ac.id/it-bootcamp/" target="_blank">IT Bootcamp</a></li>
                                     </ul>
                                 </div>
@@ -576,14 +298,14 @@
 
                             <div class="link-group align-right-lg aplikasi-publik">
                                 <div>
-                                    <h3 class="group-title aplikasi-publik">Aplikasi Publik</h3>
+                                    <h3 class="group-title">Aplikasi Publik</h3>
                                     <ul class="group-list">
                                         <li><a href="https://himtalks.vercel.app/himtalks" target="_blank">Himtalks</a></li>
                                         <li><a href="https://himtika.cs.unsika.ac.id/himtika-awards/" target="_blank">Himtika Award</a></li>
                                         <li><a href="https://himtika.cs.unsika.ac.id/media-partner/" target="_blank">Media Partner</a></li>
                                         <li><a href="https://himtika.cs.unsika.ac.id/corporation/" target="_blank">Corporation</a></li>
                                         <li><a href="https://himtika.cs.unsika.ac.id/kalender/" target="_blank">Kalender</a></li>
-                                        <li><a href="https://himtika.cs.unsika.ac.id/dosen/" target="_blank">Profil Tenaga Pendidik</a></li>
+                                        <li><a href="https://himtika.cs.unsika.ac.id/dosen/" target="_blank">Tenaga Pendidik</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -608,5 +330,4 @@
     <script src="assets/js/scrollbar.js"></script>
     <script src="assets/js/script.js"></script>
 </body>
-
 </html>

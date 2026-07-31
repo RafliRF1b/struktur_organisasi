@@ -124,7 +124,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: flex-start;
-		margin-left: 10px;
+		margin-left: 5px;
 		width:auto;
 		float:none;	
 	}
@@ -325,4 +325,201 @@
         bottom: 30px; 
         right: 20px;
     }
+}
+
+/* ============================================================
+    RESPONSIVE TEMPLATE (MOBILE-FIRST / min-width)
+    Sesuai Standar Breakpoints Tailwind CSS
+    ============================================================ */
+
+/* SM Mode: (Tailwind sm: -> 640px) */
+@media only screen and (min-width: 640px) {
+    .padding-x-section {
+        padding-left: 52px;
+        padding-right: 52px;
+    }
+
+    /* ================= START HERO SECTION ================= */
+    .hero-section .hero-glow {
+        box-shadow: 0 0 300px 200px rgba(126, 28, 134, 0.5);
+    }
+    /* ================= END HERO SECTION ================= */
+
+    /* ================= START ABOUT SECTION ================= */
+    .about-section .about-glow {
+        box-shadow: 0 0 300px 200px rgba(126, 28, 134, 0.5);
+    }
+    /* ================= END ABOUT SECTION ================= */
+}
+
+/* MD Mode: (Tailwind md: -> 768px) */
+@media only screen and (min-width: 768px) {
+    .padding-x-section {
+        padding-left: 64px;
+        padding-right: 64px;
+    }
+
+    /* ================= START HERO SECTION ================= */
+    .hero-section .hero-glow {
+        top: 40px;
+        left: 40px;
+        box-shadow: 0 0 300px 300px rgba(126, 28, 134, 0.4);
+    }
+    /* ================= END HERO SECTION ================= */
+
+    /* ================= START ABOUT SECTION ================= */
+    .about-section .about-glow {
+        top: 40px;
+        right: 40px;
+        box-shadow: 0 0 300px 300px rgba(126, 28, 134, 0.4);
+    }
+    /* ================= END ABOUT SECTION ================= */
+}
+
+/* LG Mode: (Tailwind lg: -> 1024px) */
+@media only screen and (min-width: 1024px) {
+    .padding-x-section {
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+
+    /* ================= START HERO SECTION ================= */
+    .hero-section .hero-glow {
+        top: 40px;
+        left: 40px;
+        box-shadow: 0 0 300px 300px rgba(126, 28, 134, 0.45);
+    }
+    /* ================= END HERO SECTION ================= */
+
+    /* ================= START ABOUT SECTION ================= */
+    .about-section .about-glow {
+        top: 40px;
+        right: 40px;
+        box-shadow: 0 0 300px 300px rgba(126, 28, 134, 0.45);
+    }
+    /* ================= END ABOUT SECTION ================= */
+    
+    /* ================= START FOOTER ================= */
+    .media-hp-footer { margin-left: 0px; }
+    .aplikasi-publik { margin-left: 0px; }
+    /* ================= END FOOTER ================= */
+}
+
+/* XL Mode: (Tailwind xl: -> 1280px) */
+@media only screen and (min-width: 1280px) {
+    .padding-x-section {
+        padding-left: 92px;
+        padding-right: 92px;
+    }
+
+    /* ================= START HERO SECTION ================= */
+    .hero-section .hero-glow {
+        top: 50px;
+        left: 50px;
+        box-shadow: 0 0 150px 300px rgba(126, 28, 134, 0.4);
+    }
+    /* ================= END HERO SECTION ================= */
+
+    /* ================= START ABOUT SECTION ================= */
+    .about-section .about-glow {
+        top: 50px;
+        right: 50px;
+        box-shadow: 0 0 150px 300px rgba(126, 28, 134, 0.4);
+    }
+    /* ================= END ABOUT SECTION ================= */
+}
+
+/* 2XL Mode: (Tailwind 2xl: -> 1536px) */
+@media only screen and (min-width: 1536px) {
+    .padding-x-section {
+        padding-left: 180px;
+        padding-right: 180px;
+    }
+
+    /* ================= START HERO SECTION ================= */
+    .hero-section .hero-glow {
+        top: 80px;
+        left: 50px;
+        box-shadow: 0 0 200px 400px rgba(126, 28, 134, 0.3);
+    }
+    /* ================= END HERO SECTION ================= */
+
+    /* ================= START ABOUT SECTION ================= */
+    .about-section .about-glow {
+        top: 80px;
+        right: 50px;
+        box-shadow: 0 0 200px 400px rgba(126, 28, 134, 0.3);
+    }
+    /* ================= END ABOUT SECTION ================= */
+}
+
+/* ==================== STRUKTUR ORGANISASI: MIN-WIDTH RESPONSIVE ==================== */
+@media only screen and (min-width:640px) {
+  .padding-x-section { padding-left:52px; padding-right:52px; }
+  .hero-title { font-size:44px; }
+  .division-card { flex-basis:64%; margin-left:18%; margin-right:18%; }
+  .member-card { width:180px; }
+  .role-list { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .program-thumb { flex-basis:145px; }
+}
+@media only screen and (min-width:768px) {
+  .padding-x-section { padding-left:64px; padding-right:64px; }
+  .hero-section { min-height:740px; padding-top:178px; }
+  .hero-title { font-size:50px; }
+  .hero-desc { font-size:13px; }
+  .division-card { flex-basis:52%; margin-left:24%; margin-right:24%; }
+  .leader-photo-area { width:58%; }
+  .leader-copy { padding-left:38px; padding-right:38px; }
+  .management-members { gap:18px; }
+  .program-showcase { min-height:650px; }
+}
+@media only screen and (min-width:1024px) {
+  .padding-x-section { padding-left:72px; padding-right:72px; }
+  .hero-section { min-height:760px; padding-top:180px; }
+  .wave-bg { bottom:55px; width:1600px; }
+  .hero-text { margin-bottom:42px; }
+  .division-card { flex-basis:36%; margin-left:7%; margin-right:7%; }
+  .section-title { font-size:36px; }
+  .about-section { padding-top:80px; padding-bottom:68px; }
+  .leader-card { min-height:440px; flex-direction:row; align-items:stretch; }
+  .leader-card.is-mirrored { flex-direction:row-reverse; }
+  .leader-photo-area { order:2; align-self:stretch; width:37%; min-height:440px; }
+  .leader-card.is-mirrored .leader-photo-area { order:2; }
+  .leader-photo { position:absolute; bottom:0; max-height:95%; }
+  .leader-icon { top:50%; left:auto; right:8%; width:260px; height:260px; transform:translateY(-50%); }
+  .leader-card.is-mirrored .leader-icon { right:auto; left:7%; }
+  .leader-copy { order:1; width:63%; padding:52px 48px; align-self:center; }
+  .leader-copy h3 { font-size:34px; }
+  .leader-copy p { font-size:12px; }
+  .leader-badge { bottom:36px; }
+  .management-row { flex-direction:row; justify-content:space-between; align-items:center; gap:60px; padding:74px 0; text-align:left; }
+  .management-row-reverse { flex-direction:row-reverse; }
+  .management-copy { width:47%; }
+  .management-members { width:47%; justify-content:flex-end; }
+  .management-row-reverse .management-members { justify-content:flex-start; }
+  .management-title { font-size:38px; }
+  .department-block { padding:64px 0; }
+  .department-title { font-size:38px; }
+  .department-description { font-size:12px; }
+  .member-card { width:190px; max-width:none; }
+  .program-showcase { min-height:520px; }
+  .program-showcase::after { background:linear-gradient(90deg,rgba(8,1,9,.92) 0%,rgba(8,1,9,.72) 45%,rgba(8,1,9,.12) 75%); }
+  .program-thumbs-wrap { position:absolute; top:50%; right:38px; width:46%; padding:0; transform:translateY(-50%); }
+  .program-thumbs { align-items:center; }
+  .program-thumb { flex-basis:calc((100% - 30px)/4); }
+  .program-copy { top:50%; right:auto; bottom:auto; width:53%; padding:45px 0 45px 42px; transform:translateY(-50%); }
+  .program-title { font-size:40px; }
+  .program-description { font-size:11px; }
+  .program-nav { right:40px; bottom:32px; }
+}
+@media only screen and (min-width:1280px) {
+  .padding-x-section { padding-left:96px; padding-right:96px; }
+  .hero-content,.about-section,.sc-management,.departments-section,.program-section { max-width:1320px; margin-left:auto; margin-right:auto; }
+  .division-card { flex-basis:31%; margin-left:4.5%; margin-right:4.5%; }
+  .leader-copy { padding-left:62px; }
+  .member-card { width:210px; }
+}
+@media only screen and (min-width:1536px) {
+  .padding-x-section { padding-left:112px; padding-right:112px; }
+  .hero-content,.about-section,.sc-management,.departments-section,.program-section { max-width:1440px; }
 }

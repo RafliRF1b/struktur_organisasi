@@ -13,3 +13,42 @@
       transform: rotate(360deg);
     }
 }
+
+@keyframes slowFloat {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-60px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slowFloat2 {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(100px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* LG Mode: (Tailwind lg: -> 1024px) */
+@media only screen and (min-width: 1024px) {
+    @keyframes slowFloat2 {
+        0% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(200px);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+}
