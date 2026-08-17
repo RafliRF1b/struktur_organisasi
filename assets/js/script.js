@@ -2632,7 +2632,6 @@ function updateBendaharaSection(index) {
 let currentProkerIndex = 0;
 let prokerAnimationTimeout = null;
 let isProkerChanging = false;
-let isProkerSliderMoving = false;
 
 function getCurrentProkerData() {
     const item = organizationData[currentIndex];
@@ -2671,516 +2670,225 @@ function renderProkerThumbnail(proker, prokerIndex, isActive) {
     `;
 }
 
-// function renderProkerThumbnails(item) {
-//     const track = document.getElementById('prokerThumbnailTrack');
-
-//     if (!track) { return; }
-
-//     track.innerHTML =
-//         item.programs
-//             .map(function(proker, index) {
-//                 return renderProkerThumbnail(
-//                     proker,
-//                     index,
-//                     index === currentProkerIndex
-//                 );
-//             })
-//             .join('');
-// }
-
 function renderProkerThumbnails(item) {
-    const track =
-        document.getElementById('prokerThumbnailTrack');
+    const track = document.getElementById('prokerThumbnailTrack');
 
-    if (!track || !item.programs.length) {
-        return;
-    }
-
-    const total = item.programs.length;
-
-    const orderedIndexes = [];
-
-    /*
-     * PREVIOUS CARD
-     * Selalu ditempatkan satu posisi sebelum active.
-     */
-    const previousIndex =
-        (currentProkerIndex - 1 + total) % total;
-
-    orderedIndexes.push(previousIndex);
-
-    /*
-     * ACTIVE + seluruh card setelahnya secara circular.
-     */
-    for (let offset = 0; offset < total; offset++) {
-        const index =
-            (currentProkerIndex + offset) % total;
-
-        /*
-         * Untuk kasus total > 1, previousIndex nanti
-         * sudah berada di awal sehingga jangan duplicate.
-         */
-        if (
-            index === previousIndex &&
-            total > 1
-        ) {
-            continue;
-        }
-
-        orderedIndexes.push(index);
-    }
-
-    /*
-     * Previous card kita clone lagi di bagian akhir
-     * agar NEXT tetap punya continuation.
-     */
-    if (total > 1) {
-        orderedIndexes.push(previousIndex);
-    }
+    if (!track) { return; }
 
     track.innerHTML =
-        orderedIndexes
-            .map(function(index) {
+        item.programs
+            .map(function(proker, index) {
                 return renderProkerThumbnail(
-                    item.programs[index],
+                    proker,
                     index,
                     index === currentProkerIndex
                 );
             })
             .join('');
-
-    resetProkerTrackPosition();
 }
 
-function getProkerThumbnailMetrics() {
-    const track =
-        document.getElementById('prokerThumbnailTrack');
+function updateProkerThumbnailActive() {
+    const track = document.getElementById('prokerThumbnailTrack');
 
-    if (!track) {
-        return {
-            width: 0,
-            gap: 0,
-            step: 0
-        };
-    }
+    if (!track) { return; }
 
-    const thumbnail =
-        track.querySelector('.proker-section-thumbnail');
+    const thumbnails = track.querySelectorAll('.proker-section-thumbnail');
 
-    if (!thumbnail) {
-        return {
-            width: 0,
-            gap: 0,
-            step: 0
-        };
-    }
-
-    const trackStyle =
-        window.getComputedStyle(track);
-
-    const gap =
-        parseFloat(trackStyle.columnGap) ||
-        parseFloat(trackStyle.gap) ||
-        0;
-
-    const width =
-        thumbnail.getBoundingClientRect().width;
-
-    return {
-        width: width,
-        gap: gap,
-        step: width + gap
-    };
-}
-
-function resetProkerTrackPosition() {
-    const track =
-        document.getElementById('prokerThumbnailTrack');
-
-    if (!track) {
-        return;
-    }
-
-    const metrics =
-        getProkerThumbnailMetrics();
-
-    if (!metrics.step) {
-        return;
-    }
-
-    /*
-     * Index DOM 0 = previous
-     * Index DOM 1 = active
-     *
-     * Jadi previous disembunyikan tepat
-     * di sebelah kiri viewport.
-     */
-    track.style.transition = 'none';
-
-    track.style.transform =
-        `translate3d(-${metrics.step}px, 0, 0)`;
-
-    /*
-     * Force reflow agar browser benar-benar
-     * menerapkan posisi tanpa transition.
-     */
-    void track.offsetWidth;
-}
-
-function updateProkerThumbnailStates() {
-    const track =
-        document.getElementById('prokerThumbnailTrack');
-
-    if (!track) {
-        return;
-    }
-
-    const thumbnails =
-        track.querySelectorAll(
-            '.proker-section-thumbnail'
-        );
-
-    thumbnails.forEach(function(thumbnail) {
-        const index =
-            Number(thumbnail.dataset.prokerIndex);
-
-        const isActive =
-            index === currentProkerIndex;
-
+    thumbnails.forEach(function(thumbnail, index) {
         thumbnail.classList.toggle(
             'is-active',
-            isActive
+            index === currentProkerIndex
         );
     });
 }
 
-function animateProkerNext(item, newIndex) {
-    const track =
-        document.getElementById('prokerThumbnailTrack');
-
-    if (!track || isProkerSliderMoving) {
-        return;
-    }
-
-    const metrics =
-        getProkerThumbnailMetrics();
-
-    if (!metrics.step) {
-        return;
-    }
-
-    isProkerSliderMoving = true;
-
-    /*
-     * Posisi awal:
-     *
-     * [PREV] [ACTIVE] [NEXT] [NEXT]
-     *          ↑ viewport
-     *
-     * = -1 step
-     *
-     * NEXT:
-     * geser satu card lagi ke kiri
-     * = -2 step
-     */
-    track.style.transition =
-        'transform 520ms cubic-bezier(0.22, 1, 0.36, 1)';
-
-    track.style.transform =
-        `translate3d(-${metrics.step * 2}px, 0, 0)`;
-
-    /*
-     * Background + content menjalankan
-     * animasi yang sudah kita buat sebelumnya.
-     */
-    animateProkerContentChange(
-        item,
-        newIndex
-    );
-
-    const handleTransitionEnd = function(event) {
-        if (
-            event.target !== track ||
-            event.propertyName !== 'transform'
-        ) {
-            return;
-        }
-
-        track.removeEventListener(
-            'transitionend',
-            handleTransitionEnd
+function getProkerThumbnailSpacing() {
+    const thumbnail =
+        document.querySelector(
+            '#prokerThumbnailTrack .proker-section-thumbnail'
         );
 
-        /*
-         * currentProkerIndex sudah berubah oleh
-         * animateProkerContentChange.
-         *
-         * Render ulang urutan DOM berdasarkan
-         * active terbaru.
-         */
-        renderProkerThumbnails(item);
+    if (!thumbnail) {
+        return 94;
+    }
 
-        updateProkerThumbnailStates();
+    const thumbnailWidth =
+        thumbnail.offsetWidth;
 
-        isProkerSliderMoving = false;
-    };
+    let thumbnailGap = 10;
 
-    track.addEventListener(
-        'transitionend',
-        handleTransitionEnd
-    );
+    if (window.innerWidth >= 640) {
+        thumbnailGap = 12;
+    }
+
+    if (window.innerWidth >= 768) {
+        thumbnailGap = 14;
+    }
+
+    if (window.innerWidth >= 1024) {
+        thumbnailGap = 12;
+    }
+
+    if (window.innerWidth >= 1280) {
+        thumbnailGap = 14;
+    }
+
+    if (window.innerWidth >= 1536) {
+        thumbnailGap = 16;
+    }
+
+    return thumbnailWidth + thumbnailGap;
 }
 
-function animateProkerPrev(item, newIndex) {
-    const track =
-        document.getElementById('prokerThumbnailTrack');
+function updateProkerThumbnailSlider(animate = true) {
+    const item =
+        getCurrentProkerData();
 
-    if (!track || isProkerSliderMoving) {
+    const track =
+        document.getElementById(
+            'prokerThumbnailTrack'
+        );
+
+    if (
+        !item ||
+        !track ||
+        !item.programs.length
+    ) {
         return;
     }
 
-    isProkerSliderMoving = true;
+    const total =
+        item.programs.length;
 
-    /*
-     * Posisi awal:
-     *
-     * [PREV] [ACTIVE] [NEXT]
-     *          ↑ viewport
-     *
-     * Previous sudah benar-benar berada
-     * di kiri viewport.
-     *
-     * Jadi cukup gerakkan track ke kanan
-     * menuju translateX(0).
-     */
-    track.style.transition =
-        'transform 520ms cubic-bezier(0.22, 1, 0.36, 1)';
-
-    track.style.transform =
-        'translate3d(0, 0, 0)';
-
-    animateProkerContentChange(
-        item,
-        newIndex
-    );
-
-    const handleTransitionEnd = function(event) {
-        if (
-            event.target !== track ||
-            event.propertyName !== 'transform'
-        ) {
-            return;
-        }
-
-        track.removeEventListener(
-            'transitionend',
-            handleTransitionEnd
+    const thumbnails =
+        Array.from(
+            track.querySelectorAll(
+                '.proker-section-thumbnail'
+            )
         );
 
+    const spacing =
+        getProkerThumbnailSpacing();
+
+
+    thumbnails.forEach(function(
+        thumbnail,
+        index
+    ) {
         /*
-         * Setelah previous masuk dan menjadi active,
-         * susun ulang DOM diam-diam.
-         */
-        renderProkerThumbnails(item);
+        ========================================
+        CIRCULAR FORWARD DISTANCE
 
-        updateProkerThumbnailStates();
+        current 0:
+        0 -> slot 0
+        1 -> slot 1
+        2 -> slot 2
+        3 -> slot 3
+        ...
 
-        isProkerSliderMoving = false;
-    };
+        current 4:
+        4 -> slot 0
+        0 -> slot 1
+        1 -> slot 2
+        ...
 
-    track.addEventListener(
-        'transitionend',
-        handleTransitionEnd
-    );
+        Jadi setelah NEXT, card yang baru dilewati
+        berpindah ke kanan/belakang.
+        ========================================
+        */
+        const distance =
+            (
+                index -
+                currentProkerIndex +
+                total
+            ) % total;
+
+
+        let scale = 0.82;
+        let opacity = 0;
+        let zIndex = 1;
+
+        /*
+        ACTIVE
+        */
+        if (distance === 0) {
+            scale = 1.08;
+            opacity = 1;
+            zIndex = 5;
+        }
+
+        /*
+        NEXT PERTAMA
+        */
+        else if (distance === 1) {
+            scale = 0.96;
+            opacity = 1;
+            zIndex = 4;
+        }
+
+        /*
+        NEXT KEDUA
+        */
+        else if (distance === 2) {
+            scale = 0.9;
+            opacity = 0.82;
+            zIndex = 3;
+        }
+
+        /*
+        CARD KEEMPAT:
+        hanya sedikit mengintip
+        */
+        else if (distance === 3) {
+            scale = 0.84;
+            opacity = 0.32;
+            zIndex = 2;
+        }
+
+
+        const translateX =
+            distance * spacing;
+
+
+        thumbnail.style.transition =
+            animate
+                ? `
+                    transform 520ms
+                    cubic-bezier(0.22, 1, 0.36, 1),
+                    opacity 420ms ease,
+                    filter 420ms ease
+                `
+                : 'none';
+
+
+        thumbnail.style.transform = `
+            translate3d(${translateX}px, 0, 0)
+            scale(${scale})
+        `;
+
+        thumbnail.style.opacity =
+            opacity;
+
+        thumbnail.style.zIndex =
+            zIndex;
+
+        thumbnail.style.pointerEvents =
+            distance > 3
+                ? 'none'
+                : 'auto';
+
+
+        thumbnail.classList.toggle(
+            'is-active',
+            distance === 0
+        );
+
+        thumbnail.classList.toggle(
+            'is-distant',
+            distance === 3
+        );
+    });
 }
-
-// function getProkerThumbnailSpacing() {
-//     const thumbnail =
-//         document.querySelector(
-//             '#prokerThumbnailTrack .proker-section-thumbnail'
-//         );
-
-//     if (!thumbnail) {
-//         return 94;
-//     }
-
-//     const thumbnailWidth =
-//         thumbnail.offsetWidth;
-
-//     let thumbnailGap = 10;
-
-//     if (window.innerWidth >= 640) {
-//         thumbnailGap = 12;
-//     }
-
-//     if (window.innerWidth >= 768) {
-//         thumbnailGap = 14;
-//     }
-
-//     if (window.innerWidth >= 1024) {
-//         thumbnailGap = 12;
-//     }
-
-//     if (window.innerWidth >= 1280) {
-//         thumbnailGap = 14;
-//     }
-
-//     if (window.innerWidth >= 1536) {
-//         thumbnailGap = 16;
-//     }
-
-//     return thumbnailWidth + thumbnailGap;
-// }
-
-// function updateProkerThumbnailSlider(animate = true) {
-//     const item =
-//         getCurrentProkerData();
-
-//     const track =
-//         document.getElementById(
-//             'prokerThumbnailTrack'
-//         );
-
-//     if (
-//         !item ||
-//         !track ||
-//         !item.programs.length
-//     ) {
-//         return;
-//     }
-
-//     const total =
-//         item.programs.length;
-
-//     const thumbnails =
-//         Array.from(
-//             track.querySelectorAll(
-//                 '.proker-section-thumbnail'
-//             )
-//         );
-
-//     const spacing =
-//         getProkerThumbnailSpacing();
-
-
-//     thumbnails.forEach(function(
-//         thumbnail,
-//         index
-//     ) {
-//         /*
-//         ========================================
-//         CIRCULAR FORWARD DISTANCE
-
-//         current 0:
-//         0 -> slot 0
-//         1 -> slot 1
-//         2 -> slot 2
-//         3 -> slot 3
-//         ...
-
-//         current 4:
-//         4 -> slot 0
-//         0 -> slot 1
-//         1 -> slot 2
-//         ...
-
-//         Jadi setelah NEXT, card yang baru dilewati
-//         berpindah ke kanan/belakang.
-//         ========================================
-//         */
-//         const distance =
-//             (
-//                 index -
-//                 currentProkerIndex +
-//                 total
-//             ) % total;
-
-
-//         let scale = 0.82;
-//         let opacity = 0;
-//         let zIndex = 1;
-
-//         /*
-//         ACTIVE
-//         */
-//         if (distance === 0) {
-//             scale = 1.08;
-//             opacity = 1;
-//             zIndex = 5;
-//         }
-
-//         /*
-//         NEXT PERTAMA
-//         */
-//         else if (distance === 1) {
-//             scale = 0.96;
-//             opacity = 1;
-//             zIndex = 4;
-//         }
-
-//         /*
-//         NEXT KEDUA
-//         */
-//         else if (distance === 2) {
-//             scale = 0.9;
-//             opacity = 0.82;
-//             zIndex = 3;
-//         }
-
-//         /*
-//         CARD KEEMPAT:
-//         hanya sedikit mengintip
-//         */
-//         else if (distance === 3) {
-//             scale = 0.84;
-//             opacity = 0.32;
-//             zIndex = 2;
-//         }
-
-
-//         const translateX =
-//             distance * spacing;
-
-
-//         thumbnail.style.transition =
-//             animate
-//                 ? `
-//                     transform 520ms
-//                     cubic-bezier(0.22, 1, 0.36, 1),
-//                     opacity 420ms ease,
-//                     filter 420ms ease
-//                 `
-//                 : 'none';
-
-
-//         thumbnail.style.transform = `
-//             translate3d(${translateX}px, 0, 0)
-//             scale(${scale})
-//         `;
-
-//         thumbnail.style.opacity =
-//             opacity;
-
-//         thumbnail.style.zIndex =
-//             zIndex;
-
-//         thumbnail.style.pointerEvents =
-//             distance > 3
-//                 ? 'none'
-//                 : 'auto';
-
-
-//         thumbnail.classList.toggle(
-//             'is-active',
-//             distance === 0
-//         );
-
-//         thumbnail.classList.toggle(
-//             'is-distant',
-//             distance === 3
-//         );
-//     });
-// }
 
 function updateProkerContent(item) {
     const proker = item.programs[currentProkerIndex];
@@ -3248,14 +2956,12 @@ function animateProkerContentChange(item, newIndex) {
             'prokerContent'
         );
 
-    /*
-     * Fallback jika elemen animasi tidak ditemukan.
-     */
     if (!background || !content) {
         currentProkerIndex =
             newIndex;
 
         updateProkerContent(item);
+        updateProkerThumbnailSlider();
 
         return;
     }
@@ -3265,14 +2971,15 @@ function animateProkerContentChange(item, newIndex) {
         prokerAnimationTimeout
     );
 
+
     isProkerChanging = true;
 
 
     /*
-     * ==============================
-     * PHASE 1 — CONTENT LAMA KELUAR
-     * ==============================
-     */
+    ========================================
+    PHASE 1 — KELUAR
+    ========================================
+    */
     background.classList.add(
         'proker-background-leave'
     );
@@ -3287,58 +2994,66 @@ function animateProkerContentChange(item, newIndex) {
             function() {
 
                 /*
-                 * Setelah content lama hampir hilang,
-                 * baru ganti index + data.
-                 */
+                GANTI DATA ketika elemen lama
+                sudah hampir tidak terlihat.
+                */
                 currentProkerIndex =
                     newIndex;
 
                 updateProkerContent(item);
 
+                updateProkerThumbnailSlider();
+
 
                 /*
-                 * Tunggu browser merender data baru.
-                 */
+                Force browser membaca state baru
+                sebelum animasi masuk.
+                */
                 requestAnimationFrame(
                     function() {
 
                         requestAnimationFrame(
                             function() {
 
-                                /*
-                                 * Hapus state keluar.
-                                 */
-                                background.classList.remove(
-                                    'proker-background-leave'
-                                );
+                                background
+                                    .classList
+                                    .remove(
+                                        'proker-background-leave'
+                                    );
 
-                                content.classList.remove(
-                                    'proker-content-leave'
-                                );
+                                content
+                                    .classList
+                                    .remove(
+                                        'proker-content-leave'
+                                    );
 
+                                background
+                                    .classList
+                                    .add(
+                                        'proker-background-enter'
+                                    );
 
-                                /*
-                                 * Jalankan animasi masuk.
-                                 */
-                                background.classList.add(
-                                    'proker-background-enter'
-                                );
-
-                                content.classList.add(
-                                    'proker-content-enter'
-                                );
+                                content
+                                    .classList
+                                    .add(
+                                        'proker-content-enter'
+                                    );
 
 
                                 window.setTimeout(
                                     function() {
 
-                                        background.classList.remove(
-                                            'proker-background-enter'
-                                        );
+                                        background
+                                            .classList
+                                            .remove(
+                                                'proker-background-enter'
+                                            );
 
-                                        content.classList.remove(
-                                            'proker-content-enter'
-                                        );
+                                        content
+                                            .classList
+                                            .remove(
+                                                'proker-content-enter'
+                                            );
 
                                         isProkerChanging =
                                             false;
@@ -3400,138 +3115,67 @@ function updateProkerSection(index) {
 
     requestAnimationFrame(
         function() {
-            resetProkerTrackPosition();
-            updateProkerThumbnailStates();
+            updateProkerThumbnailSlider(
+                false
+            );
         }
     );
 }
 
-// function goToProker(newIndex) {
-//     const item =
-//         getCurrentProkerData();
-
-//     if (
-//         !item ||
-//         isProkerChanging
-//     ) {
-//         return;
-//     }
-
-
-//     const total =
-//         item.programs.length;
-
-
-//     const safeIndex =
-//         (
-//             (newIndex % total) +
-//             total
-//         ) % total;
-
-
-//     if (
-//         safeIndex ===
-//         currentProkerIndex
-//     ) {
-//         return;
-//     }
-
-
-//     /*
-//     Thumbnail bergerak ke state baru dulu.
-//     */
-//     const oldIndex =
-//         currentProkerIndex;
-
-//     currentProkerIndex =
-//         safeIndex;
-
-//     updateProkerThumbnailSlider();
-
-//     /*
-//     Balikkan state data sebentar.
-//     Pergantian data dilakukan saat fade-out selesai.
-//     */
-//     currentProkerIndex =
-//         oldIndex;
-
-
-//     animateProkerContentChange(
-//         item,
-//         safeIndex
-//     );
-// }
-
-function goToProker(newIndex, direction = null) {
+function goToProker(newIndex) {
     const item =
         getCurrentProkerData();
 
     if (
         !item ||
-        isProkerSliderMoving ||
         isProkerChanging
     ) {
         return;
     }
 
+
     const total =
         item.programs.length;
 
-    if (!total) {
-        return;
-    }
 
     const safeIndex =
-        ((newIndex % total) + total) % total;
+        (
+            (newIndex % total) +
+            total
+        ) % total;
 
-    if (safeIndex === currentProkerIndex) {
+
+    if (
+        safeIndex ===
+        currentProkerIndex
+    ) {
         return;
     }
+
 
     /*
-     * Kalau direction diberikan oleh tombol,
-     * kita tahu persis arah animasinya.
-     */
-    if (direction === 'next') {
-        animateProkerNext(
-            item,
-            safeIndex
-        );
+    Thumbnail bergerak ke state baru dulu.
+    */
+    const oldIndex =
+        currentProkerIndex;
 
-        return;
-    }
+    currentProkerIndex =
+        safeIndex;
 
-    if (direction === 'prev') {
-        animateProkerPrev(
-            item,
-            safeIndex
-        );
-
-        return;
-    }
+    updateProkerThumbnailSlider();
 
     /*
-     * Klik thumbnail.
-     *
-     * Cari shortest circular direction.
-     */
-    const forwardDistance =
-        (safeIndex - currentProkerIndex + total) % total;
+    Balikkan state data sebentar.
+    Pergantian data dilakukan saat fade-out selesai.
+    */
+    currentProkerIndex =
+        oldIndex;
 
-    const backwardDistance =
-        (currentProkerIndex - safeIndex + total) % total;
 
-    if (forwardDistance <= backwardDistance) {
-        animateProkerNext(
-            item,
-            safeIndex
-        );
-    } else {
-        animateProkerPrev(
-            item,
-            safeIndex
-        );
-    }
+    animateProkerContentChange(
+        item,
+        safeIndex
+    );
 }
 
 // Navigation
@@ -3543,7 +3187,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (prokerPrevBtn) {
         prokerPrevBtn.addEventListener('click',
             function() {
-                goToProker(currentProkerIndex - 1, 'prev');
+                goToProker(currentProkerIndex - 1);
             }
         );
     }
@@ -3551,7 +3195,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (prokerNextBtn) {
         prokerNextBtn.addEventListener('click',
             function() {
-                goToProker(currentProkerIndex + 1, 'next');
+                goToProker(currentProkerIndex + 1);
             }
         );
     }
@@ -3652,12 +3296,9 @@ document.addEventListener('DOMContentLoaded', () => {
     Ketika ukuran layar berubah, posisi dan jarak card
     dihitung ulang tanpa membangun ulang card.
     */
-    window.addEventListener('resize', function() {
+    window.addEventListener('resize', () => {
         updateSlider(0, false);
-
-        requestAnimationFrame(function() {
-            resetProkerTrackPosition();
-        });
+        updateProkerThumbnailSlider(false);
     });
 
     /*
