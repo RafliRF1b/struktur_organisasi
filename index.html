@@ -60,7 +60,7 @@
                         <!--Nav Box-->
                         <div class="nav-outer clearfix">
                             <div class="logo-outer">
-                                <a href="index.html">
+                                <a href="/">
                                     <img src="assets/img/logo/himtika-header.svg" alt="Logo Himtika"
                                         title="HIMTIKA">
                                 </a>
@@ -178,50 +178,358 @@
         <!-- End Main Header -->
 
         <main class="main-section">
-            <section class="hero-section" aria-labelledby="heroTitle">
+            <!-- ==================== START HERO SECTION ==================== -->
+            <section class="hero-section">
                 <div class="hero-glow floating-glow-2"></div>
-                <img src="assets/img/background/bg_wave.png" alt="" class="wave-bg" aria-hidden="true">
-                <div class="hero-content padding-x-section">
+
+                <div class="hero-bg">
+                    <img src="assets/img/background/bg_wave.png" alt="Wave Background" class="wave-bg">
+                </div>
+    
+                <div class="hero-content">
                     <div class="hero-text">
-                        <p class="section-tag">Struktur Organisasi</p>
-                        <h1 class="hero-title" id="heroTitle">Di Balik HIMTIKA</h1>
-                        <p class="hero-desc">Jelajahi Steering Committee dan setiap divisi HIMTIKA untuk mengenal pengurus, departemen, serta program kerja yang dijalankan.</p>
+                        <h2 class="section-tag">STRUKTUR ORGANISASI</h2>
+                        <h1 class="hero-title">Di Balik HIMTIKA</h1>
+                        <p class="hero-desc">
+                            Jelajahi setiap divisi HIMTIKA untuk melihat anggota, departemen, serta berbagai program kerja yang dijalankan oleh setiap divisi.
+                        </p>
                     </div>
-                    <div class="slider-viewport" id="divisionViewport">
+    
+                    <!-- Slider -->
+                    <div class="slider-wrapper" id="divisionSliderViewport">
                         <div class="division-slider" id="divisionSlider"></div>
                     </div>
-                    <div class="slider-controls" aria-label="Navigasi struktur organisasi">
-                        <button class="slider-nav" id="prevBtn" type="button" aria-label="Pilihan sebelumnya"><i class="fas fa-chevron-left"></i></button>
+    
+                    <!-- Controls: prev button - dots - next button -->
+                    <div class="slider-controls">
+                        <button class="slider-nav prev" id="prevBtn" type="button" aria-label="Divisi sebelumnya">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </button>
                         <div class="slider-dots" id="sliderDots"></div>
-                        <button class="slider-nav" id="nextBtn" type="button" aria-label="Pilihan berikutnya"><i class="fas fa-chevron-right"></i></button>
+                        <button class="slider-nav next" id="nextBtn" type="button" aria-label="Divisi berikutnya">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
                     </div>
                 </div>
             </section>
+            <!--- ==================== END HERO SECTION ==================== -->
 
-            <section class="about-section padding-x-section" id="about" aria-labelledby="aboutTitle">
-                <div class="about-glow floating-glow-2"></div>
-                <div class="section-heading">
-                    <p class="section-eyebrow">Kenali Lebih Dalam</p>
-                    <h2 class="section-title" id="aboutTitle">Tentang <span id="aboutDivisionName">Divisi RnD</span></h2>
-                </div>
-                <div id="leaderCards" class="leader-cards"></div>
-            </section>
+            <!-- ==================== START ABOUT SECTION ==================== -->
+            <section class="about-section padding-x-section" id="about">
+                <div class="about-glow"></div>
 
-            <section class="sc-management padding-x-section" id="scManagement" hidden>
-                <div id="secretarySection" class="management-row"></div>
-                <div id="treasurerSection" class="management-row management-row-reverse"></div>
-            </section>
+                <div class="about-section-container">
+                    <div class="about-section-heading">
+                        <span class="about-section-eyebrow">
+                            KENALI LEBIH DALAM
+                        </span>
 
-            <div id="divisionContent">
-                <section class="departments-section padding-x-section" id="departmentsSection" aria-label="Departemen divisi"></section>
-                <section class="program-section padding-x-section" id="programSection" aria-labelledby="programTitle">
-                    <div class="section-heading section-heading-center">
-                        <h2 class="section-title" id="programTitle">Program Kerja <span id="programDivisionName">Divisi RnD</span></h2>
+                        <h2 class="about-section-title">
+                            Tentang
+                            <span
+                                class="about-section-title-highlight"
+                                id="aboutDivisionName"
+                            >
+                                Divisi RnD
+                            </span>
+                        </h2>
                     </div>
-                    <div class="program-showcase" id="programShowcase"></div>
-                </section>
-            </div>
+
+                    <div
+                        class="about-section-cards"
+                        id="aboutCards"
+                    ></div>
+                </div>
+            </section>
+            <!-- ==================== END ABOUT SECTION ==================== -->
+
+            <!-- ==================== START DEPARTMENT SECTION 1 ==================== -->
+            <section class="department-section department-section-1 padding-x-section" id="departmentSection1">
+                <div class="department-glow-1 floating-glow-2"></div>
+
+                <div class="department-section-container">
+                    <div class="department-section-heading">
+                        <span class="department-section-eyebrow">
+                            DEPARTEMEN
+                        </span>
+
+                        <h2
+                            class="department-section-title"
+                            id="departmentTitle1"
+                        ></h2>
+
+                        <p
+                            class="department-section-description"
+                            id="departmentDescription1"
+                        ></p>
+                    </div>
+
+                    <div
+                        class="department-section-members"
+                        id="departmentMembers1"
+                    ></div>
+                </div>
+            </section>
+            <!-- ==================== END DEPARTMENT SECTION 1 ==================== -->
+
+            <!-- ==================== START DEPARTMENT SECTION 2 ==================== -->
+            <section class="department-section department-section-2 padding-x-section" id="departmentSection2">
+                <div class="department-glow-2 floating-glow-2"></div>
+
+                <div class="department-section-container">
+                    <div class="department-section-heading">
+                        <span class="department-section-eyebrow">
+                            DEPARTEMEN
+                        </span>
+
+                        <h2 class="department-section-title" id="departmentTitle2"></h2>
+
+                        <p class="department-section-description" id="departmentDescription2"></p>
+                    </div>
+
+                    <div class="department-section-members" id="departmentMembers2"></div>
+                </div>
+            </section>
+            <!-- ==================== END DEPARTMENT SECTION 2 ==================== -->
+
+            <!-- ==================== START SECRETARY SECTION ==================== -->
+            <section class="secretary-section padding-x-section" id="secretarySection" hidden>
+                <div class="secretary-glow floating-glow-2"></div>
+
+                <div class="secretary-section-container">
+                    <div class="secretary-section-layout">
+
+                        <!-- ================= TEXT ================= -->
+                        <div class="secretary-section-content">
+                            <span class="secretary-section-eyebrow" id="secretaryEyebrow">
+                                ADMINISTRASI
+                            </span>
+                            <h2 class="secretary-section-title" id="secretaryTitle">
+                                Sekretaris
+                            </h2>
+
+                            <!-- MOBILE MEMBERS -->
+                            <div class="secretary-section-members secretary-section-members-mobile" id="secretaryMembersMobile"></div>
+
+                            <div class="secretary-section-information">
+                                <p class="secretary-section-description" id="secretaryDescription"></p>
+                                <p class="secretary-section-role-label">
+                                    Peran Sekretaris yaitu:
+                                </p>
+                                <ul class="secretary-section-role-list" id="secretaryRoleList"></ul>
+                            </div>
+                        </div>
+
+                        <!-- ================= DESKTOP MEMBERS ================= -->
+                        <div
+                            class="secretary-section-members secretary-section-members-desktop"
+                            id="secretaryMembersDesktop"
+                        ></div>
+
+                    </div>
+                </div>
+            </section> 
+
+            <!-- <section class="secretary-section padding-x-section" id="secretarySection" hidden>
+                <div class="secretary-glow floating-glow-2"></div>
+
+                <div class="secretary-section-container">
+                    <div class="secretary-section-content">
+                        <span class="secretary-section-eyebrow" id="secretaryEyebrow">
+                            ADMINISTRASI
+                        </span>
+
+                        <h2 class="secretary-section-title" id="secretaryTitle">
+                            Sekretaris
+                        </h2>
+
+                        <div class="secretary-section-members" id="secretaryMembers"></div>
+
+                        <div class="secretary-section-information">
+                            <p class="secretary-section-description" id="secretaryDescription"></p>
+                            <p class="secretary-section-role-label">
+                                Peran Sekretaris yaitu:
+                            </p>
+                            <ul class="secretary-section-role-list" id="secretaryRoleList"></ul>
+                        </div>
+                    </div>
+                </div>
+            </section> -->
+            <!-- ==================== END SECRETARY SECTION ==================== -->
+
+            <!-- ==================== TREASURER SECTION ==================== -->
+            <section class="treasurer-section padding-x-section" id="treasurerSection" hidden>
+                <div class="treasurer-glow floating-glow-2"></div>
+
+                <div class="treasurer-section-container">
+                    <div class="treasurer-section-layout">
+
+                        <!-- ================= TEXT ================= -->
+                        <div class="treasurer-section-content">
+                            <span class="treasurer-section-eyebrow" id="treasurerEyebrow">
+                                KEUANGAN
+                            </span>
+                            <h2 class="treasurer-section-title" id="treasurerTitle">
+                                Bendahara
+                            </h2>
+
+                            <!-- MOBILE MEMBERS -->
+                            <div
+                                class="treasurer-section-members treasurer-section-members-mobile"
+                                id="treasurerMembersMobile"
+                            ></div>
+                            <div class="treasurer-section-information">
+                                <p class="treasurer-section-description" id="treasurerDescription"></p>
+                                <p class="treasurer-section-role-label">
+                                    Peran Bendahara yaitu:
+                                </p>
+                                <ul class="treasurer-section-role-list" id="treasurerRoleList"></ul>
+                            </div>
+                        </div>
+
+                        <!-- ================= DESKTOP MEMBERS ================= -->
+                        <div
+                            class="treasurer-section-members treasurer-section-members-desktop"
+                            id="treasurerMembersDesktop"
+                        ></div>
+
+                    </div>
+                </div>
+            </section>
+            
+            <!-- <section class="treasurer-section padding-x-section" id="treasurerSection" hidden>
+                <div class="treasurer-glow floating-glow-2"></div>
+
+                <div class="treasurer-section-container">
+                    <div class="treasurer-section-content">
+                        <span class="treasurer-section-eyebrow" id="treasurerEyebrow">
+                            KEUANGAN
+                        </span>
+                        <h2 class="treasurer-section-title" id="treasurerTitle">
+                            Bendahara
+                        </h2>
+                        
+                        <div class="treasurer-section-members" id="treasurerMembers"></div>
+
+                        <div class="treasurer-section-information">
+                            <p class="treasurer-section-description" id="treasurerDescription"></p>
+
+                            <p class="treasurer-section-role-label">
+                                Peran Bendahara yaitu:
+                            </p>
+
+                            <ul
+                                class="treasurer-section-role-list"
+                                id="treasurerRoleList"
+                            ></ul>
+                        </div>
+                    </div>
+                </div>
+            </section> -->
+            <!-- ==================== TREASURER SECTION END ==================== -->
+
+            <!-- ==================== START PROGRAM SECTION ==================== -->
+            <section class="proker-section padding-x-section" id="prokerSection">
+                <div class="proker-glow floating-glow-2"></div>
+
+                <div class="proker-section-container">
+                    <!-- Section Heading -->
+                    <div class="proker-section-heading">
+                        <h2 class="proker-section-title">
+                            Program Kerja <
+                            <span class="proker-section-title-highlight" id="prokerDivisionName">
+                                Divisi RnD
+                            </span>
+                        </h2>
+                    </div>
+
+                    <!-- Main PROKER Card -->
+                    <div class="proker-section-card" id="prokerCard">
+
+                        <!-- Full Card Background -->
+                        <img
+                            src=""
+                            alt=""
+                            class="proker-section-background"
+                            id="prokerBackground"
+                            onerror="this.onerror=null; this.src='assets/img/logo/Himtika.png'"
+                        >
+
+                        <!-- Background Overlay -->
+                        <div class="proker-section-overlay"></div>
+
+                        <!-- ==================== PROKER MEDIA AREA ==================== -->
+                        <div class="proker-section-media">
+
+                            <!-- Thumbnail Selector -->
+                            <div class="proker-section-selector">
+                                <div class="proker-section-thumbnail-viewport" id="prokerThumbnailViewport">
+                                    <div class="proker-section-thumbnail-track" id="prokerThumbnailTrack">
+                                        <!-- Diisi JavaScript -->
+                                    </div>
+                                </div>
+
+                                <!-- Navigation -->
+                                <div class="proker-section-navigation">
+                                    <div class="proker-section-counter">
+                                        Program Kerja
+                                        <span id="prokerCurrent">1</span>/<span id="prokerTotal">1</span>
+                                    </div>
+
+                                    <div class="proker-section-navigation-line"></div>
+
+                                    <div class="proker-section-navigation-buttons">
+                                        <button
+                                            type="button"
+                                            class="proker-section-navigation-button proker-section-navigation-prev"
+                                            id="prokerPrevBtn"
+                                            aria-label="Program kerja sebelumnya"
+                                        >
+                                            <i class="fas fa-chevron-left"></i>
+                                        </button>
+
+                                        <button
+                                            type="button"
+                                            class="proker-section-navigation-button proker-section-navigation-next"
+                                            id="prokerNextBtn"
+                                            aria-label="Program kerja berikutnya"
+                                        >
+                                            <i class="fas fa-chevron-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ==================== END PROKER MEDIA AREA ==================== -->
+
+                        <!-- ==================== PROKER CONTENT ==================== -->
+                        <div class="proker-section-content" id="prokerContent">
+                            <p class="proker-section-department" id="prokerDepartment"></p>
+                            <h3 class="proker-section-proker-title" id="prokerTitle"></h3>
+                            <p class="proker-section-pic" id="prokerPic"></p>
+                            <p class="proker-section-description" id="prokerDescription"></p>
+                            <a href="#" class="proker-section-learn-more btnleft" id="prokerLearnMore">
+                                <span>Learn More</span>
+                                <svg
+                                    class="btn-icon-top"
+                                    width="19"
+                                    height="19"
+                                    viewBox="0 0 19 19"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path d="M10 4L10 12.25L13.25 9L14 9.66L9.5 14.16L5 9.66L5.75 9L9 12.25L9 4H10ZM9.5 19C4.26 19 0 14.75 0 9.5C0 6.98044 1.00089 4.56408 2.78249 2.78249C4.56408 1.00089 6.98044 0 9.5 0C12.0196 0 14.4359 1.00089 16.2175 2.78249C17.9991 4.56408 19 6.98044 19 9.5C19 12.0196 17.9991 14.4359 16.2175 16.2175C14.4359 17.9991 12.0196 19 9.5 19C6.98044 19 4.56408 17.9991 2.78249 16.2175C1.00089 14.4359 0 12.0196 0 9.5ZM9.5 18C10.6162 18 11.7215 17.7801 12.7528 17.353C13.7841 16.9258 14.7211 16.2997 15.5104 15.5104C16.2997 14.7211 16.9258 13.7841 17.353 12.7528C17.7801 11.7215 18 10.6162 18 9.5C18 7.24566 17.1045 5.08365 15.5104 3.48959C13.9163 1.89553 11.7543 1 9.5 1C7.24566 1 5.08365 1.89553 3.48959 3.48959C1.89553 5.08365 1 7.24566 1 9.5C1 11.7543 1.89553 13.9163 3.48959 15.5104C5.08365 17.1045 7.24566 18 9.5 18Z" />
+                                </svg>
+                            </a>
+                        </div>
+                        <!-- ==================== END PROGRAM CONTENT ==================== -->
+
+                    </div>
+                </div>
+            </section>
+            <!-- ==================== END PROGRAM SECTION ==================== -->
         </main>
+
         <footer class="site-footer">
             <div class="footer-container">
                 <div class="footer-main-row">
@@ -235,10 +543,10 @@
                                 <a href="https://www.instagram.com/himtalks_?igsh=MW5tYm1iNG9udDB3dA==" target="_blank" class="footer-social-link">
                                     <svg width="22" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z" /></svg>
                                 </a>
-                                <a href="https://www.linkedin.com/company/himtika/" target="_blank" class="footer-social-link">
+                                <a href="https://www.linkedin.com/company/himtikaofficial/" target="_blank" class="footer-social-link">
                                     <svg width="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M22.2235 0H1.772C0.792 0 0 0.7735 0 1.73V22.265C0 23.222 0.792 24 1.772 24H22.2235C23.2035 24 24 23.222 24 22.27V1.73C24 0.773 23.203 0 22.2235 0ZM7.12 20.4515H3.558V8.9955H7.1205L7.12 20.4515ZM5.339 7.435C5.06781 7.43546 4.79918 7.38246 4.54849 7.27903C4.29779 7.17559 4.06995 7.02376 3.87798 6.83221C3.686 6.64065 3.53367 6.41314 3.4297 6.16267C3.32572 5.9122 3.27213 5.64369 3.272 5.3725C3.27213 5.10131 3.32572 4.8328 3.4297 4.58233C3.53367 4.33186 3.686 4.10435 3.87798 3.91279C4.06995 3.72124 4.29779 3.56941 4.54849 3.46597C4.79918 3.36254 5.06781 3.30954 5.339 3.31C5.88601 3.31 6.41061 3.5273 6.79741 3.91409C7.1842 4.30089 7.4015 4.82549 7.4015 5.3725C7.4015 5.91951 7.1842 6.44411 6.79741 6.83091C6.41061 7.2177 5.88601 7.435 5.339 7.435ZM20.4515 20.452H16.894V14.883C16.894 13.5565 16.8705 11.8455 15.042 11.8455C13.1905 11.8455 12.9095 13.2935 12.9095 14.789V20.4515H9.356V8.9955H12.769V10.5605H12.8155C13.289 9.6605 14.4515 8.7095 16.181 8.7095C19.786 8.7095 20.4515 11.0815 20.4515 14.1655V20.452Z" /></svg>
                                 </a>
-                                <a href="https://www.youtube.com/@himtikaofficial4428" target="_blank" class="footer-social-link">
+                                <a href="https://www.youtube.com/@HimtikaOfficial" target="_blank" class="footer-social-link">
                                     <svg width="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" /></svg>
                                 </a>
                                 <a href="https://www.tiktok.com/@himtika_unsika" target="_blank" class="footer-social-link">
