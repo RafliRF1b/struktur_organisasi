@@ -633,6 +633,117 @@
         font-size: 11px;
     }
     /* ================= END TREASURER SECTION ================= */
+
+    /* ================= START PROKER SECTION ================= */
+    .proker-section {
+        padding-top: 56px;
+        padding-bottom: 80px;
+    }
+    .proker-section .proker-glow {
+        top: 100px;
+        right: 70px;
+        box-shadow:
+            0 0 220px 140px
+            rgba(126, 28, 134, 0.3);
+    }
+
+    /* ================= HEADING ================= */
+    .proker-section .proker-section-heading {
+        margin-bottom: 36px;
+    }
+    .proker-section .proker-section-title {
+        font-size: 15px;
+    }
+    .proker-section
+    .proker-section-title-highlight {
+        margin-top: 6px;
+        font-size: 28px;
+    }
+
+    /* ================= MAIN CARD ================= */
+    .proker-section .proker-section-card {
+        border-radius: 22px;
+    }
+
+    /* ================= MEDIA AREA ================= */
+    .proker-section .proker-section-media {
+        height: 355px;
+    }
+    .proker-section .proker-section-selector {
+        right: 16px;
+        bottom: 6px;
+        width: 260px;
+        max-width: calc(100% - 32px);
+    }
+
+    /* ================= THUMBNAIL ================= */
+    .proker-section
+    .proker-section-thumbnail-viewport {
+        padding-top: 10px;
+    }
+    .proker-section
+    .proker-section-thumbnail-track {
+        height: 64px;
+    }
+    .proker-section
+    .proker-section-thumbnail {
+        width: 78px;
+        height: 54px;
+        border-radius: 11px;
+    }
+
+    /* ================= NAVIGATION ================= */
+    .proker-section
+    .proker-section-navigation {
+        gap: 9px;
+        margin-top: 4px;
+    }
+    .proker-section
+    .proker-section-counter {
+        font-size: 10px;
+    }
+    .proker-section
+    .proker-section-navigation-buttons {
+        gap: 9px;
+    }
+    .proker-section
+    .proker-section-navigation-button {
+        width: 32px;
+        height: 32px;
+    }
+    .proker-section
+    .proker-section-navigation-button i {
+        font-size: 11px;
+    }
+
+    /* ================= CONTENT ================= */
+    .proker-section .proker-section-content {
+        padding: 8px 22px 42px;
+    }
+    .proker-section
+    .proker-section-department {
+        font-size: 11px;
+    }
+    .proker-section
+    .proker-section-proker-title {
+        font-size: 21px;
+    }
+    .proker-section
+    .proker-section-pic {
+        font-size: 10px;
+    }
+    .proker-section
+    .proker-section-description {
+        margin-top: 17px;
+        font-size: 10.5px;
+    }
+
+    /* ================= LEARN MORE ================= */
+    .proker-section
+    .proker-section-learn-more {
+        margin-top: 22px;
+    }
+    /* ================= END PROKER SECTION ================= */
 }
 
 /* MD Mode: (Tailwind md: -> 768px) */
@@ -1020,6 +1131,117 @@
         font-size: 11px;
     }
     /* ================= END TREASURER SECTION ================= */
+
+    /* ================= START PROKER SECTION ================= */
+    .proker-section {
+        padding-top: 64px;
+        padding-bottom: 88px;
+    }
+    .proker-section .proker-glow {
+        top: 110px;
+        right: 90px;
+        box-shadow: 0 0 240px 150px rgba(126, 28, 134, 0.3);
+    }
+
+    /* ================= HEADING ================= */
+    .proker-section .proker-section-heading {
+        margin-bottom: 40px;
+    }
+    .proker-section .proker-section-title {
+        font-size: 31px;
+    }
+    .proker-section
+    .proker-section-title-highlight {
+        font-size: 31px;
+        display: inline;
+        margin-top: 0px;
+    }
+
+    /* ================= MAIN CARD ================= */
+    .proker-section .proker-section-card {
+        border-radius: 24px;
+    }
+
+    /* ================= MEDIA AREA ================= */
+    .proker-section .proker-section-media {
+        height: 405px;
+    }
+    .proker-section .proker-section-selector {
+        right: 20px;
+        bottom: 8px;
+        width: 306px;
+        max-width: calc(100% - 40px);
+    }
+
+    /* ================= THUMBNAIL ================= */
+    .proker-section
+    .proker-section-thumbnail-track {
+        height: 72px;
+    }
+    .proker-section
+    .proker-section-thumbnail {
+        width: 90px;
+        height: 62px;
+        border-radius: 12px;
+    }
+
+    /* ================= NAVIGATION ================= */
+    .proker-section
+    .proker-section-navigation {
+        gap: 10px;
+        margin-top: 5px;
+    }
+    .proker-section
+    .proker-section-counter {
+        font-size: 11px;
+    }
+    .proker-section
+    .proker-section-navigation-button {
+        width: 34px;
+        height: 34px;
+    }
+    .proker-section
+    .proker-section-navigation-button i {
+        font-size: 12px;
+    }
+
+    /* ================= CONTENT ================= */
+    .proker-section .proker-section-content {
+        padding: 10px 28px 46px;
+    }
+    .proker-section
+    .proker-section-department {
+        font-size: 11px;
+    }
+    .proker-section
+    .proker-section-proker-title {
+        font-size: 24px;
+    }
+    .proker-section
+    .proker-section-pic {
+        margin-top: 9px;
+        font-size: 11px;
+    }
+    .proker-section
+    .proker-section-description {
+        max-width: 600px;
+        margin-top: 18px;
+        font-size: 11px;
+    }
+
+    /* ================= LEARN MORE ================= */
+    .proker-section
+    .proker-section-learn-more {
+        margin-top: 24px;
+        padding: 10px 24px;
+    }
+    .proker-section
+    .proker-section-learn-more
+    .btn-icon-top {
+        width: 16px;
+        height: 16px;
+    }
+    /* ================= END PROKER SECTION ================= */
 }
 
 /* LG Mode: (Tailwind lg: -> 1024px) */
@@ -1555,6 +1777,183 @@
             opacity 500ms ease;
     }
     /* ================= END TREASURER SECTION ================= */
+
+    /* ================= START PROKER SECTION ================= */
+    .proker-section {
+        padding-top: 72px;
+        padding-bottom: 96px;
+    }
+    .proker-section .proker-glow {
+        top: 50%;
+        right: 18%;
+        box-shadow: 0 0 260px 170px rgba(126, 28, 134, 0.28);
+    }
+
+    /* ================= HEADING ================= */
+    .proker-section .proker-section-heading {
+        margin-bottom: 44px;
+    }
+    .proker-section .proker-section-title {
+        font-size: 33px;
+    }
+    .proker-section
+    .proker-section-title-highlight {
+        font-size: 33px;
+    }
+
+    /* ================= MAIN CARD ================= */
+    .proker-section .proker-section-card {
+        min-height: 450px;
+        border-radius: 26px;
+    }
+
+    .proker-section
+    .proker-section-background {
+        object-position: center;
+    }
+
+    /*
+     * Desktop memakai dua overlay:
+     * 1. kiri untuk keterbacaan text
+     * 2. bawah untuk selector
+     */
+    .proker-section
+    .proker-section-overlay {
+        background:
+            linear-gradient(
+                to right,
+                rgba(8, 3, 10, 0.88) 0%,
+                rgba(8, 3, 10, 0.68) 30%,
+                rgba(8, 3, 10, 0.28) 54%,
+                rgba(8, 3, 10, 0.06) 78%,
+                rgba(8, 3, 10, 0) 100%
+            ),
+            linear-gradient(
+                to top,
+                rgba(8, 3, 10, 0.66) 0%,
+                rgba(8, 3, 10, 0.24) 25%,
+                rgba(8, 3, 10, 0) 55%
+            );
+    }
+
+    /* ================= MEDIA AREA ================= */
+    .proker-section .proker-section-media {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+    }
+    .proker-section .proker-section-selector {
+        right: 28px;
+        bottom: 26px;
+        width: 340px;
+        max-width: none;
+        pointer-events: auto;
+    }
+
+    /* ================= THUMBNAIL ================= */
+    .proker-section
+    .proker-section-thumbnail-viewport {
+        padding-top: 10px;
+    }
+    .proker-section
+    .proker-section-thumbnail-track {
+        height: 80px;
+    }
+    .proker-section
+    .proker-section-thumbnail {
+        width: 100px;
+        height: 70px;
+        border-radius: 13px;
+    }
+
+    /* ================= NAVIGATION ================= */
+    .proker-section
+    .proker-section-navigation {
+        gap: 11px;
+        margin-top: 6px;
+    }
+    .proker-section
+    .proker-section-counter {
+        font-size: 11px;
+    }
+    .proker-section
+    .proker-section-navigation-line {
+        background-color:
+            rgba(255, 255, 255, 0.38);
+    }
+    .proker-section
+    .proker-section-navigation-buttons {
+        gap: 10px;
+    }
+    .proker-section
+    .proker-section-navigation-button {
+        width: 36px;
+        height: 36px;
+    }
+    .proker-section
+    .proker-section-navigation-button i {
+        font-size: 12px;
+    }
+    .proker-section
+    .proker-section-navigation-button:hover {
+        transform:
+            translateY(-2px)
+            scale(1.04);
+        border-color:
+            var(--color-mainGold);
+    }
+
+    /* ================= CONTENT ================= */
+    .proker-section .proker-section-content {
+        position: absolute;
+        left: 42px;
+        top: 100px;
+        width: 48%;
+        max-width: 500px;
+        padding: 0;
+        z-index: 2;
+    }
+    .proker-section
+    .proker-section-department {
+        margin-bottom: 7px;
+        font-size: 12px;
+    }
+    .proker-section
+    .proker-section-proker-title {
+        font-size: 28px;
+    }
+    .proker-section
+    .proker-section-pic {
+        margin-top: 10px;
+        font-size: 11px;
+    }
+    .proker-section
+    .proker-section-description {
+        margin-top: 18px;
+        font-size: 12px;
+        line-height: 1.55;
+    }
+
+    /* ================= LEARN MORE ================= */
+    .proker-section
+    .proker-section-learn-more {
+        margin-top: 24px;
+        padding: 10px 24px;
+        font-size: 16px;
+    }
+    .proker-section
+    .proker-section-learn-more span {
+        font-size: 16px;
+    }
+    .proker-section
+    .proker-section-learn-more
+    .btn-icon-top {
+        width: 19px;
+        height: 19px;
+    }
+    /* ================= END PROKER SECTION ================= */
     
     /* ================= START FOOTER ================= */
     .media-hp-footer { margin-left: 0px; }
@@ -1912,6 +2311,99 @@
         font-size: 10px;
     }
     /* ================= END TREASURER SECTION ================= */
+
+    /* ================= START PROKER SECTION ================= */
+    .proker-section {
+        padding-top: 80px;
+        padding-bottom: 154px;
+    }
+    .proker-section .proker-glow {
+        right: 16%;
+        box-shadow: 0 0 290px 185px rgba(126, 28, 134, 0.28);
+    }
+
+    /* ================= HEADING ================= */
+    .proker-section .proker-section-heading {
+        margin-bottom: 48px;
+    }
+    .proker-section .proker-section-title {
+        font-size: 36px;
+    }
+    .proker-section
+    .proker-section-title-highlight {
+        font-size: 36px;
+    }
+
+    /* ================= MAIN CARD ================= */
+    .proker-section .proker-section-card {
+        min-height: 530px;
+        border-radius: 28px;
+    }
+
+    /* ================= SELECTOR ================= */
+    .proker-section
+    .proker-section-selector {
+        right: 34px;
+        bottom: 30px;
+        width: 390px;
+    }
+
+    /* ================= THUMBNAIL ================= */
+    .proker-section
+    .proker-section-thumbnail-track {
+        height: 90px;
+    }
+    .proker-section
+    .proker-section-thumbnail {
+        width: 116px;
+        height: 78px;
+        border-radius: 14px;
+    }
+
+    /* ================= NAVIGATION ================= */
+    .proker-section
+    .proker-section-counter {
+        font-size: 12px;
+    }
+    .proker-section
+    .proker-section-navigation-button {
+        width: 38px;
+        height: 38px;
+    }
+    .proker-section
+    .proker-section-navigation-button i {
+        font-size: 13px;
+    }
+
+    /* ================= CONTENT ================= */
+    .proker-section
+    .proker-section-content {
+        left: 38px;
+        width: 48%;
+        max-width: 550px;
+    }
+    .proker-section
+    .proker-section-department {
+        font-size: 13px;
+    }
+    .proker-section
+    .proker-section-proker-title {
+        font-size: 31px;
+    }
+    .proker-section
+    .proker-section-pic {
+        font-size: 12px;
+    }
+    .proker-section
+    .proker-section-description {
+        margin-top: 20px;
+        font-size: 13px;
+    }
+    .proker-section
+    .proker-section-learn-more {
+        margin-top: 26px;
+    }
+    /* ================= END PROKER SECTION ================= */
 }
 
 /* 2XL Mode: (Tailwind 2xl: -> 1536px) */
@@ -2159,6 +2651,107 @@
         font-size: 11px;
     }
     /* ================= END TREASURER SECTION ================= */
+
+    /* ================= START PROKER SECTION ================= */
+    .proker-section {
+        padding-top: 88px;
+        padding-bottom: 112px;
+    }
+    .proker-section .proker-glow {
+        box-shadow: 0 0 320px 200px rgba(126, 28, 134, 0.28);
+    }
+
+    /* ================= HEADING ================= */
+    .proker-section
+    .proker-section-heading {
+        margin-bottom: 52px;
+    }
+    .proker-section
+    .proker-section-title {
+        font-size: 39px;
+    }
+    .proker-section
+    .proker-section-title-highlight {
+        font-size: 39px;
+    }
+
+    /* ================= MAIN CARD ================= */
+    .proker-section
+    .proker-section-card {
+        min-height: 550px;
+        border-radius: 30px;
+    }
+
+    /* ================= SELECTOR ================= */
+    .proker-section
+    .proker-section-selector {
+        right: 40px;
+        bottom: 34px;
+        width: 430px;
+    }
+
+    /* ================= THUMBNAIL ================= */
+    .proker-section
+    .proker-section-thumbnail-track {
+        height: 98px;
+    }
+    .proker-section
+    .proker-section-thumbnail {
+        width: 128px;
+        height: 86px;
+        border-radius: 15px;
+    }
+
+    /* ================= NAVIGATION ================= */
+    .proker-section
+    .proker-section-counter {
+        font-size: 13px;
+    }
+    .proker-section
+    .proker-section-navigation {
+        gap: 12px;
+        margin-top: 8px;
+    }
+    .proker-section
+    .proker-section-navigation-button {
+        width: 40px;
+        height: 40px;
+    }
+    .proker-section
+    .proker-section-navigation-button i {
+        font-size: 14px;
+    }
+
+    /* ================= CONTENT ================= */
+    .proker-section
+    .proker-section-content {
+        left: 42px;
+        max-width: 600px;
+    }
+    .proker-section
+    .proker-section-department {
+        font-size: 14px;
+    }
+    .proker-section
+    .proker-section-proker-title {
+        font-size: 34px;
+    }
+    .proker-section
+    .proker-section-pic {
+        margin-top: 11px;
+        font-size: 13px;
+    }
+    .proker-section
+    .proker-section-description {
+        margin-top: 22px;
+        font-size: 14px;
+        line-height: 1.55;
+    }
+    .proker-section
+    .proker-section-learn-more {
+        margin-top: 28px;
+    }
+    /* ================= END PROKER SECTION ================= */
 }
 
 /* ==================== STRUKTUR ORGANISASI: MIN-WIDTH RESPONSIVE ==================== */

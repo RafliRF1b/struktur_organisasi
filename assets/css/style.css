@@ -2268,7 +2268,8 @@ ul,li{
     position: relative;
     width: 100%;
     padding-top: 48px;
-    padding-bottom: 72px;
+    padding-bottom: 102px;
+    transition: all 0.5s ease;
 }
 .proker-section .proker-glow {
     position: absolute;
@@ -2354,25 +2355,20 @@ ul,li{
 .proker-section .proker-section-media {
     position: relative;
     width: 100%;
-    /* height: 260px; */
     height: 325px;
     z-index: 3;
 }
 .proker-section .proker-section-selector {
     position: absolute;
-    /* right: 0;
-    bottom: 0; */
     right: 14px;
     bottom: 4px;
-    /* width: 100%; */
-    width: 256px;
+    width: 226px;
     max-width: calc(100% - 28px);
     display: flex;
     flex-direction: column;
     /* align-items: flex-end; */
     align-items: stretch;
     padding: 0;
-    /* padding: 0 14px 14px; */
 }
 
 /* ================= THUMBNAIL VIEWPORT ================= */
@@ -2380,48 +2376,22 @@ ul,li{
 .proker-section-thumbnail-viewport {
     position: relative;
     width: 100%;
-    /* max-width: 290px; */
-    /* width: 286px; */
     overflow: hidden;
     padding-top: 8px;
     padding-bottom: 0px;
 }
 .proker-section
 .proker-section-thumbnail-track {
-    /* position: relative;
+    position: relative;
     width: 100%;
-    height: 56px; */
-
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    width: max-content;
-    will-change: transform;
+    height: 56px;
 }
 .proker-section
 .proker-section-thumbnail {
-    position: relative;
-    width: 84px;
-    height: 58px;
-    flex: 0 0 84px;
-    overflow: hidden;
-    padding: 0;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    border-radius: 10px;
-    background: transparent;
-    cursor: pointer;
-    opacity: 0.82;
-    transform: scale(0.94);
-    transition:
-        transform 350ms ease,
-        opacity 350ms ease,
-        border-color 350ms ease,
-        box-shadow 350ms ease;
-    
-    /* position: absolute;
+    position: absolute;
     top: 50%;
     left: 0;
-    width: 74px;
+    width: 70px;
     height: 48px;
     overflow: hidden;
     padding: 0;
@@ -2437,7 +2407,7 @@ ul,li{
         cubic-bezier(0.22, 1, 0.36, 1),
         opacity 420ms ease,
         border-color 350ms ease,
-        box-shadow 350ms ease; */
+        box-shadow 350ms ease;
 }
 .proker-section
 .proker-section-thumbnail-image {
@@ -2590,7 +2560,7 @@ ul,li{
 .proker-section .proker-section-content {
     position: relative;
     width: 100%;
-    padding: 18px 18px 38px;
+    padding: 5px 18px 38px;
     background: transparent;
     z-index: 2;
     transition:
