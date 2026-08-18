@@ -272,23 +272,22 @@
 	} */
 
     .back-to-top {
-        bottom: 40px; /* Lebih mepet ke bawah */
-        right: 30px;  /* Lebih mepet ke kanan */
+        bottom: 40px;
+        right: 30px;
     }
 
-    .button {
-        width: 40px;  /* Kecilin dari 50px ke 40px */
+    .button-back-to-top {
+        width: 40px;
         height: 40px;
         padding: 8px;
     }
 
-    .button .svg {
-        width: 18px;  /* Icon juga ikut mengecil biar proporsional */
+    .button-back-to-top .svg-back-to-top {
+        width: 18px;
         height: 18px;
     }
 
-    /* Sembunyikan efek 'Top' di mobile biar nggak menuhi layar pas kena jempol */
-    .button::after {
+    .button-back-to-top::after {
         display: none !important;
     }
 }
@@ -396,7 +395,6 @@
     .about-section .about-glow {
         box-shadow: 0 0 300px 200px rgba(126, 28, 134, 0.5);
     }
-
     .about-section {
         padding-top: 40px;
         padding-bottom: 80px;
@@ -456,7 +454,7 @@
     }
     .department-section .department-glow-1,
     .department-section .department-glow-2 {
-        box-shadow: 0 0 220px 140px rgba(126, 28, 134, 0.3);
+        box-shadow: 0 0 300px 200px rgba(126, 28, 134, 0.5);
     }
     .department-section .department-section-heading {
         margin-bottom: 36px;
@@ -492,11 +490,7 @@
         padding-bottom: 80px;
     }
     .secretary-section .secretary-glow {
-        top: 90px;
-        right: 70px;
-        box-shadow:
-            0 0 220px 140px
-            rgba(126, 28, 134, 0.3);
+        box-shadow: 0 0 300px 200px rgba(126, 28, 134, 0.5);
     }
     .secretary-section
     .secretary-section-layout {
@@ -566,11 +560,7 @@
         padding-bottom: 80px;
     }
     .treasurer-section .treasurer-glow {
-        top: 90px;
-        left: 70px;
-        box-shadow:
-            0 0 220px 140px
-            rgba(126, 28, 134, 0.3);
+        box-shadow: 0 0 300px 200px rgba(126, 28, 134, 0.5);
     }
     .treasurer-section
     .treasurer-section-layout {
@@ -640,11 +630,7 @@
         padding-bottom: 80px;
     }
     .proker-section .proker-glow {
-        top: 100px;
-        right: 70px;
-        box-shadow:
-            0 0 220px 140px
-            rgba(126, 28, 134, 0.3);
+        box-shadow: 0 0 300px 200px rgba(126, 28, 134, 0.5);
     }
 
     /* ================= HEADING ================= */
@@ -734,14 +720,8 @@
     }
     .proker-section
     .proker-section-description {
-        margin-top: 17px;
+        margin-top: 6px;
         font-size: 10.5px;
-    }
-
-    /* ================= LEARN MORE ================= */
-    .proker-section
-    .proker-section-learn-more {
-        margin-top: 22px;
     }
     /* ================= END PROKER SECTION ================= */
 }
@@ -751,6 +731,12 @@
     .padding-x-section {
         padding-left: 64px;
         padding-right: 64px;
+    }
+    .title-text-shadow {
+        text-shadow: 3px 3.3px 1px #000000;
+    }
+    .description-text-shadow {
+        text-shadow: 1px 1px 1px #000000;
     }
 
     /* ================= START HERO SECTION ================= */
@@ -937,10 +923,12 @@
     .department-section .department-glow-1 {
         top: 80px;
         right: 90px;
+        box-shadow: 0 0 300px 300px rgba(126, 28, 134, 0.4);
     }
     .department-section .department-glow-2 {
         top: 80px;
         left: 90px;
+        box-shadow: 0 0 300px 300px rgba(126, 28, 134, 0.4);
     }
     .department-section .department-section-heading {
         margin-bottom: 40px;
@@ -1139,8 +1127,8 @@
     }
     .proker-section .proker-glow {
         top: 110px;
-        right: 90px;
-        box-shadow: 0 0 240px 150px rgba(126, 28, 134, 0.3);
+        right: 40px;
+        box-shadow: 0 0 300px 300px rgba(126, 28, 134, 0.4);
     }
 
     /* ================= HEADING ================= */
@@ -1215,31 +1203,18 @@
     }
     .proker-section
     .proker-section-proker-title {
-        font-size: 24px;
+        font-size: 26px;
     }
     .proker-section
     .proker-section-pic {
-        margin-top: 9px;
-        font-size: 11px;
+        margin-top: 22px;
+        font-size: 12px;
     }
     .proker-section
     .proker-section-description {
         max-width: 600px;
-        margin-top: 18px;
+        margin-top: 7px;
         font-size: 11px;
-    }
-
-    /* ================= LEARN MORE ================= */
-    .proker-section
-    .proker-section-learn-more {
-        margin-top: 24px;
-        padding: 10px 24px;
-    }
-    .proker-section
-    .proker-section-learn-more
-    .btn-icon-top {
-        width: 16px;
-        height: 16px;
     }
     /* ================= END PROKER SECTION ================= */
 }
@@ -1425,7 +1400,7 @@
     }
     .department-section .department-glow-1,
     .department-section .department-glow-2 {
-        box-shadow: 0 0 260px 160px rgba(126, 28, 134, 0.28);
+        box-shadow: 0 0 300px 300px rgba(126, 28, 134, 0.45);
     }
     .department-section .department-section-heading {
         margin-bottom: 44px;
@@ -1505,11 +1480,9 @@
         padding-bottom: 96px;
     }
     .secretary-section .secretary-glow {
-        top: 50%;
-        right: 15%;
-        box-shadow:
-            0 0 260px 160px
-            rgba(126, 28, 134, 0.28);
+        top: 40px;
+        right: 40px;
+        box-shadow: 0 0 300px 300px rgba(126, 28, 134, 0.45);
     }
     .secretary-section
     .secretary-section-container {
@@ -1644,11 +1617,9 @@
         padding-bottom: 96px;
     }
     .treasurer-section .treasurer-glow {
-        top: 50%;
-        left: 15%;
-        box-shadow:
-            0 0 260px 160px
-            rgba(126, 28, 134, 0.28);
+        top: 40px;
+        left: 40px;
+        box-shadow: 0 0 300px 300px rgba(126, 28, 134, 0.45);
     }
     .treasurer-section
     .treasurer-section-container {
@@ -1784,9 +1755,9 @@
         padding-bottom: 96px;
     }
     .proker-section .proker-glow {
-        top: 50%;
-        right: 18%;
-        box-shadow: 0 0 260px 170px rgba(126, 28, 134, 0.28);
+        top: 100px;
+        right: 40px;
+        box-shadow: 0 0 300px 300px rgba(126, 28, 134, 0.45);
     }
 
     /* ================= HEADING ================= */
@@ -1926,32 +1897,25 @@
     }
     .proker-section
     .proker-section-pic {
-        margin-top: 10px;
-        font-size: 11px;
+        margin-top: 24px;
+        font-size: 13px;
     }
     .proker-section
     .proker-section-description {
-        margin-top: 18px;
+        margin-top: 8px;
         font-size: 12px;
         line-height: 1.55;
+        text-align: justify;
     }
 
     /* ================= LEARN MORE ================= */
-    .proker-section
-    .proker-section-learn-more {
-        margin-top: 24px;
-        padding: 10px 24px;
-        font-size: 16px;
-    }
-    .proker-section
     .proker-section-learn-more span {
-        font-size: 16px;
+        font-size: 15px;
+        font-weight: 600;
     }
-    .proker-section
-    .proker-section-learn-more
-    .btn-icon-top {
-        width: 19px;
-        height: 19px;
+    .proker-section-learn-more .btn-icon-top {
+        width: 17px;
+        height: 17px;
     }
     /* ================= END PROKER SECTION ================= */
     
@@ -2318,8 +2282,9 @@
         padding-bottom: 154px;
     }
     .proker-section .proker-glow {
-        right: 16%;
-        box-shadow: 0 0 290px 185px rgba(126, 28, 134, 0.28);
+        top: 150px;
+        right: 50px;
+        box-shadow: 0 0 150px 300px rgba(126, 28, 134, 0.4);
     }
 
     /* ================= HEADING ================= */
@@ -2392,16 +2357,28 @@
     }
     .proker-section
     .proker-section-pic {
-        font-size: 12px;
+        font-size: 13px;
     }
     .proker-section
     .proker-section-description {
-        margin-top: 20px;
+        margin-top: 10px;
         font-size: 13px;
     }
     .proker-section
     .proker-section-learn-more {
         margin-top: 26px;
+    }
+    /* ================= LEARN MORE ================= */
+    .proker-section-learn-more {
+        padding: 8px 22px;
+    }
+    .proker-section-learn-more span {
+        font-weight: 550;
+        font-size: 15px;
+    }
+    .proker-section-learn-more .btn-icon-top {
+        width: 16px;
+        height: 16px;
     }
     /* ================= END PROKER SECTION ================= */
 }
@@ -2658,7 +2635,7 @@
         padding-bottom: 112px;
     }
     .proker-section .proker-glow {
-        box-shadow: 0 0 320px 200px rgba(126, 28, 134, 0.28);
+        box-shadow: 0 0 200px 400px rgba(126, 28, 134, 0.3);
     }
 
     /* ================= HEADING ================= */
@@ -2738,12 +2715,11 @@
     }
     .proker-section
     .proker-section-pic {
-        margin-top: 11px;
-        font-size: 13px;
+        margin-top: 26px;
     }
     .proker-section
     .proker-section-description {
-        margin-top: 22px;
+        margin-top: 10px;
         font-size: 14px;
         line-height: 1.55;
     }
@@ -2753,74 +2729,3 @@
     }
     /* ================= END PROKER SECTION ================= */
 }
-
-/* ==================== STRUKTUR ORGANISASI: MIN-WIDTH RESPONSIVE ==================== */
-/* @media only screen and (min-width:640px) {
-  .padding-x-section { padding-left:52px; padding-right:52px; }
-  .hero-title { font-size:44px; }
-  .division-card { flex-basis:64%; margin-left:18%; margin-right:18%; }
-  .member-card { width:180px; }
-  .role-list { grid-template-columns:repeat(2,minmax(0,1fr)); }
-  .program-thumb { flex-basis:145px; }
-}
-@media only screen and (min-width:768px) {
-  .padding-x-section { padding-left:64px; padding-right:64px; }
-  .hero-section { min-height:740px; padding-top:178px; }
-  .hero-title { font-size:50px; }
-  .hero-desc { font-size:13px; }
-  .division-card { flex-basis:52%; margin-left:24%; margin-right:24%; }
-  .leader-photo-area { width:58%; }
-  .leader-copy { padding-left:38px; padding-right:38px; }
-  .management-members { gap:18px; }
-  .program-showcase { min-height:650px; }
-}
-@media only screen and (min-width:1024px) {
-  .padding-x-section { padding-left:72px; padding-right:72px; }
-  .hero-section { min-height:760px; padding-top:180px; }
-  .wave-bg { bottom:55px; width:1600px; }
-  .hero-text { margin-bottom:42px; }
-  .division-card { flex-basis:36%; margin-left:7%; margin-right:7%; }
-  .section-title { font-size:36px; }
-  .about-section { padding-top:80px; padding-bottom:68px; }
-  .leader-card { min-height:440px; flex-direction:row; align-items:stretch; }
-  .leader-card.is-mirrored { flex-direction:row-reverse; }
-  .leader-photo-area { order:2; align-self:stretch; width:37%; min-height:440px; }
-  .leader-card.is-mirrored .leader-photo-area { order:2; }
-  .leader-photo { position:absolute; bottom:0; max-height:95%; }
-  .leader-icon { top:50%; left:auto; right:8%; width:260px; height:260px; transform:translateY(-50%); }
-  .leader-card.is-mirrored .leader-icon { right:auto; left:7%; }
-  .leader-copy { order:1; width:63%; padding:52px 48px; align-self:center; }
-  .leader-copy h3 { font-size:34px; }
-  .leader-copy p { font-size:12px; }
-  .leader-badge { bottom:36px; }
-  .management-row { flex-direction:row; justify-content:space-between; align-items:center; gap:60px; padding:74px 0; text-align:left; }
-  .management-row-reverse { flex-direction:row-reverse; }
-  .management-copy { width:47%; }
-  .management-members { width:47%; justify-content:flex-end; }
-  .management-row-reverse .management-members { justify-content:flex-start; }
-  .management-title { font-size:38px; }
-  .department-block { padding:64px 0; }
-  .department-title { font-size:38px; }
-  .department-description { font-size:12px; }
-  .member-card { width:190px; max-width:none; }
-  .program-showcase { min-height:520px; }
-  .program-showcase::after { background:linear-gradient(90deg,rgba(8,1,9,.92) 0%,rgba(8,1,9,.72) 45%,rgba(8,1,9,.12) 75%); }
-  .program-thumbs-wrap { position:absolute; top:50%; right:38px; width:46%; padding:0; transform:translateY(-50%); }
-  .program-thumbs { align-items:center; }
-  .program-thumb { flex-basis:calc((100% - 30px)/4); }
-  .program-copy { top:50%; right:auto; bottom:auto; width:53%; padding:45px 0 45px 42px; transform:translateY(-50%); }
-  .program-title { font-size:40px; }
-  .program-description { font-size:11px; }
-  .program-nav { right:40px; bottom:32px; }
-}
-@media only screen and (min-width:1280px) {
-  .padding-x-section { padding-left:96px; padding-right:96px; }
-  .hero-content,.about-section,.sc-management,.departments-section,.program-section { max-width:1320px; margin-left:auto; margin-right:auto; }
-  .division-card { flex-basis:31%; margin-left:4.5%; margin-right:4.5%; }
-  .leader-copy { padding-left:62px; }
-  .member-card { width:210px; }
-}
-@media only screen and (min-width:1536px) {
-  .padding-x-section { padding-left:112px; padding-right:112px; }
-  .hero-content,.about-section,.sc-management,.departments-section,.program-section { max-width:1440px; }
-} */

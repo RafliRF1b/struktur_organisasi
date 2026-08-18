@@ -115,7 +115,7 @@
             {
                 scrollTop: 0
             },
-            800
+            100
         );
     });
 
@@ -123,6 +123,36 @@
         handlePreloader();
     });
 })(window.jQuery);
+
+// Mencegah Inspect Element dan View Source
+document.addEventListener("keydown", function (event) {
+    if (
+        (event.ctrlKey &&
+        (event.key === "u" ||
+            event.key === "i" ||
+            event.key === "j" ||
+            event.key === "s")) ||
+        (event.ctrlKey &&
+        event.shiftKey &&
+        (event.key === "I" || event.key === "J" || event.key === "C")) ||
+        event.key === "F12"
+    ) {
+        event.preventDefault();
+        console.log("Inspect Element telah dinonaktifkan!"); // Debugging
+    }
+    });
+    // Mencegah Klik Kanan
+    document.addEventListener("contextmenu", function (event) {
+    event.preventDefault();
+    });
+    // Mencegah Drag & Drop pada Semua Gambar
+    document.addEventListener("dragstart", function (event) {
+    event.preventDefault();
+    });
+    // Mencegah Klik Kanan pada Gambar Secara Spesifik
+    document.querySelectorAll("img").forEach((img) => {
+    img.addEventListener("contextmenu", (event) => event.preventDefault());
+});
 
 
 // =====================================================
@@ -137,6 +167,7 @@ const iconPlaceholderEdukasi = 'assets/img/icon/icon-edukasi.png';
 const iconPlaceholderInfokom = 'assets/img/icon/icon-infokom.png';
 
 const organizationData = [
+    // SC
     {
         id: 'sc',
         type: 'sc',
@@ -255,6 +286,7 @@ const organizationData = [
         }
     },
 
+    // Internal
     {
         id: 'internal',
         type: 'division',
@@ -280,10 +312,7 @@ const organizationData = [
         departments: [
             {
                 name: 'Human Resource Development',
-
-                description:
-                    'Meningkatkan motivasi, softskill, karakter, dan perkembangan kinerja pengurus HIMTIKA.',
-
+                description: 'Meningkatkan motivasi, softskill, karakter, dan perkembangan kinerja pengurus HIMTIKA.',
                 members: [
                     [
                         'Tantawi Shafa Saadilah Simatupang',
@@ -313,10 +342,7 @@ const organizationData = [
             },
             {
                 name: 'HIMTIKA Care',
-
-                description:
-                    'Menjalankan pembinaan, penjagaan, evaluasi, dan kontrol organisasi dengan semangat empati serta kekeluargaan.',
-
+                description: 'Menjalankan pembinaan, penjagaan, evaluasi, dan kontrol organisasi dengan semangat empati serta kekeluargaan.',
                 members: [
                     [
                         'Sri Dayanti',
@@ -351,40 +377,46 @@ const organizationData = [
                 'Human Resource Development',
                 'Dies Natalis HIMTIKA',
                 'Ridho Mughni Nursila',
-                'Rangkaian acara untuk memperingati berdirinya HIMTIKA sekaligus mempererat silaturahmi keluarga besar HIMTIKA.',
-                'internal-dies-natalis.webp'
+                'Dies Natalis HIMTIKA merupakan rangkaian kegiatan untuk memperingati hari berdirinya HIMTIKA ke-9 pada 16 Oktober 2017 sekaligus menjadi momentum mempererat hubungan dan rasa kekeluargaan di lingkungan Informatika. Kegiatan ini menjadi wadah untuk membangun kebersamaan, solidaritas, dan silaturahmi antara pengurus, anggota, alumni, serta mahasiswa Informatika lintas angkatan.',
+                'internal-dies-natalis.webp',
+                'https://www.instagram.com/diesnatalis.himtika/'
             ],
             [
                 'Human Resource Development',
                 'IT Bootcamp: Independent Project',
                 'An’Amatus Syafira Aulia Azahra',
-                'Kegiatan pengenalan kehidupan kampus serta pengembangan hardskill, softskill, kepemimpinan, dan kekeluargaan mahasiswa baru Informatika.',
-                'internal-it-bootcamp.webp'
+                'IT Bootcamp: Independent Project merupakan kegiatan yang dirancang untuk mengenalkan kehidupan kampus di lingkungan Program Studi Informatika kepada mahasiswa baru. Melalui rangkaian pembelajaran dan kegiatan bersama, program ini membantu mahasiswa mengembangkan hardskill dan softskill, kemampuan dasar di bidang IT, jiwa kepemimpinan, serta membangun rasa kekeluargaan antarmahasiswa Informatika.',
+                'internal-it-bootcamp.webp',
+                'https://himtika.cs.unsika.ac.id/it-bootcamp/'
             ],
             [
                 'Human Resource Development',
-                'LKMM Pra-Dasar',
+                'Latihan Kepemimpinan Manajemen Mahasiswa Pra-Dasar (LKMMPD)',
                 'Kaisya Almaidja',
-                'Kegiatan pembekalan mahasiswa baru dalam komunikasi, pengenalan potensi diri, berpikir kritis, dan keterampilan dasar berorganisasi.',
-                'internal-lkmmpd.webp'
+                'LKMM Pra-Dasar merupakan kegiatan pembekalan bagi mahasiswa baru Informatika untuk mengembangkan keterampilan dasar yang dibutuhkan dalam kehidupan perkuliahan dan organisasi. Program ini membekali mahasiswa dengan kemampuan berkomunikasi, mengenali dan mengembangkan potensi diri, membangun pola pikir kritis, serta memposisikan diri secara efektif dalam organisasi kemahasiswaan.',
+                'internal-lkmmpd.webp',
+                'https://himtika.cs.unsika.ac.id/lkmmpd/'
             ],
             [
                 'Human Resource Development',
                 'Musyawarah Anggota',
                 'Tantawi Shafa Saadilah Simatupang',
-                'Forum musyawarah tertinggi anggota HIMTIKA untuk evaluasi, pertanggungjawaban, dan penetapan keputusan organisasi.',
-                'internal-musang.webp'
+                'MUSANG merupakan sebuah musyawarah anggota yang diadakan pada akhir  masa  kepengurusan  untuk  mengkaji  kinerja  pengurus, melakukan pertanggungjawaban,  mengamandemenkan AD/ART, GBHPK, MO, PO, mendemisionerkan  pengurus lama serta untuk memilih Ketua Umum HIMTIKA.',
+                'internal-musang.webp',
+                'https://instagram.com/himtika_unsika/'
             ],
             [
                 'HIMTIKA Care',
                 'HIMTIKA Organizing Agenda',
                 'Kayla Dwi Septiani',
-                'Program penguatan koordinasi, evaluasi, kebersamaan, dan keharmonisan seluruh pengurus HIMTIKA.',
-                'internal-hoa.webp'
+                'HIMTIKA Organizing Agenda merupakan program kerja yang menaungi berbagai agenda untuk mendukung keberlangsungan dan pengembangan organisasi HIMTIKA. Program ini mencakup Rapat Kerja Pengurus, HIMTIKA Growth Up, Evaluasi Triwulan, Himtalks, dan HIMTIKA Awards yang berperan dalam menyelaraskan arah kepengurusan, mengembangkan kualitas SDM, mengevaluasi kinerja, membangun komunikasi, serta memberikan apresiasi kepada pengurus dan anggota HIMTIKA.',
+                'internal-hoa.webp',
+                'https://himtalks.vercel.app/himtalks/'
             ]
         ]
     },
 
+    // Relasi
     {
         id: 'relation',
         type: 'division',
@@ -409,10 +441,7 @@ const organizationData = [
         departments: [
             {
                 name: 'Public Marketing',
-
-                description:
-                    'Mengembangkan tools marketing dan sumber dana potensial melalui kreativitas serta inisiatif bidang teknologi informasi.',
-
+                description: 'Mengembangkan tools marketing dan sumber dana potensial melalui kreativitas serta inisiatif bidang teknologi informasi.',
                 members: [
                     [
                         'Valen Jason',
@@ -436,10 +465,7 @@ const organizationData = [
             },
             {
                 name: 'Public Relation',
-
-                description:
-                    'Memperluas serta menjaga hubungan baik dengan himpunan, instansi, dan mahasiswa melalui komunikasi agenda HIMTIKA.',
-
+                description: 'Memperluas serta menjaga hubungan baik dengan himpunan, instansi, dan mahasiswa melalui komunikasi agenda HIMTIKA.',
                 members: [
                     [
                         'Ihsan Fauzi Akbar',
@@ -473,27 +499,30 @@ const organizationData = [
             [
                 'Public Marketing',
                 'Corporation',
-                'Marsello Hotasi Marpaung',
-                'Program kewirausahaan dan pengembangan sumber pemasukan HIMTIKA melalui produk serta aktivitas pemasaran.',
-                'relasi-corporation.webp'
+                'Marssello Hotasi Marpaung',
+                'Corporation merupakan program kerja yang berfokus pada pengembangan, produksi, dan pemasaran berbagai produk untuk memperoleh pemasukan tambahan bagi HIMTIKA. Produk yang dipasarkan dapat berupa produk digital maupun non-digital yang dikembangkan melalui kolaborasi dengan Divisi Research and Development, Information and Communication, maupun Department Public Marketing sesuai kebutuhan produk yang akan dipasarkan.',
+                'relasi-corporation.webp',
+                'https://www.instagram.com/corporation_himtika/'
             ],
             [
                 'Public Relation',
                 'HI-Link',
                 'Ihsan Fauzi Akbar',
-                'Program penghubung HIMTIKA dengan pihak eksternal melalui kunjungan, kolaborasi, dan pertukaran wawasan.',
-                'relasi-hi-link.webp'
+                'HI-LINK (HIMTIKA Link) merupakan program kerja yang menjadi jembatan konektivitas antara HIMTIKA dengan lingkungan eksternal, baik institusi pendidikan maupun industri. Program ini menaungi HIMTIKA Exchange sebagai wadah studi banding dengan organisasi kemahasiswaan lain serta HIMTIKA Goes to Company yang memberikan kesempatan kepada mahasiswa untuk mengenal secara langsung lingkungan, budaya, dan kebutuhan kompetensi di dunia kerja.',
+                'relasi-hi-link.webp',
+                'https://youtu.be/iNu6ZJkP6qY?si=ZPeNFNF9c-eRHxrr'
             ],
             [
                 'Public Relation',
                 'Kemitraan',
                 'Al Fazran Dwi Nugraha',
-                'Program untuk membangun, mengelola, dan menjaga kerja sama strategis HIMTIKA dengan mitra eksternal.',
-                'relasi-kemitraan.webp'
+                'Kemitraan merupakan program kerja yang berfokus pada pembangunan kerja sama antara HIMTIKA dengan perusahaan atau badan usaha. Melalui pencarian, pendekatan, dan negosiasi dengan mitra potensial, program ini berupaya membangun hubungan kerja sama yang saling menguntungkan sekaligus membantu mengurangi pengeluaran dan mendukung kebutuhan finansial berbagai kegiatan HIMTIKA.',
+                'relasi-kemitraan.webp',
             ]
         ]
     },
 
+    // RnD
     {
         id: 'rnd',
         type: 'division',
@@ -518,10 +547,7 @@ const organizationData = [
         departments: [
             {
                 name: 'Research Development',
-
-                description:
-                    'Mengumpulkan ide dan inovasi, mengidentifikasi kebutuhan serta masalah produk digital, dan mengawal pengembangan sampai tahap rilis.',
-
+                description: 'Mengumpulkan ide dan inovasi, mengidentifikasi kebutuhan serta masalah produk digital, dan mengawal pengembangan sampai tahap rilis.',
                 members: [
                     [
                         'Muhammad Rafisyah Rizkiyawan',
@@ -545,10 +571,7 @@ const organizationData = [
             },
             {
                 name: 'Product Development',
-
-                description:
-                    'Membuat, mengembangkan, mengelola, dan menjadi IT Support produk digital HIMTIKA.',
-
+                description: 'Membuat, mengembangkan, mengelola, dan menjadi IT Support produk digital HIMTIKA.',
                 members: [
                     [
                         'Rafli Rizqi Fadillah',
@@ -583,19 +606,20 @@ const organizationData = [
                 'Product Development',
                 'HIMTIKA Software Development',
                 'Fajar Abdilah',
-                'Program pengembangan dan pengelolaan produk digital resmi HIMTIKA untuk menunjang kebutuhan informasi serta layanan organisasi.',
+                'HIMTIKA Software Development merupakan program kerja yang berfokus pada pengembangan dan pengelolaan produk digital HIMTIKA berupa website dan aplikasi mobile. Program ini tidak hanya melakukan pemeliharaan produk yang telah tersedia, tetapi juga mengembangkan fitur, layanan, dan tampilan baru untuk menunjang kebutuhan mahasiswa Informatika serta bekerja sama dengan Department Research Development dalam proses pengembangan produk digital yang informatif dan solutif.',
                 'rnd-himtika-software-development.webp'
             ],
             [
                 'Research Development',
                 'Software House',
                 'Nanang Saepudin',
-                'Program penelitian dan pengembangan produk digital HIMTIKA berupa website maupun aplikasi mobile berdasarkan ide dan kebutuhan mahasiswa Informatika.',
+                'Software House adalah program kerja yang berfokus pada penelitian dan pengembangan produk digital HIMTIKA berupa website dan aplikasi mobile. Program ini menjadi wadah bagi mahasiswa Informatika untuk menyampaikan ide atau kebutuhan yang kemudian dianalisis dan dikembangkan bersama HIMTIKA Software Development menjadi produk digital yang bermanfaat.',
                 'rnd-software-house.webp'
             ]
         ]
     },
 
+    // Edukasi
     {
         id: 'education',
         type: 'division',
@@ -620,10 +644,7 @@ const organizationData = [
         departments: [
             {
                 name: 'Skill Education',
-
-                description:
-                    'Memfasilitasi minat, bakat, karya, dan kesiapan mahasiswa dalam mengikuti perlombaan bidang IT.',
-
+                description: 'Memfasilitasi minat, bakat, karya, dan kesiapan mahasiswa dalam mengikuti perlombaan bidang IT.',
                 members: [
                     [
                         'Fitria',
@@ -647,10 +668,7 @@ const organizationData = [
             },
             {
                 name: 'College Education',
-
-                description:
-                    'Meningkatkan keahlian dan pemahaman keilmuan IT melalui kelas belajar serta pengayaan materi perkuliahan.',
-
+                description: 'Meningkatkan keahlian dan pemahaman keilmuan IT melalui kelas belajar serta pengayaan materi perkuliahan.',
                 members: [
                     [
                         'Amelia Marliana',
@@ -673,26 +691,30 @@ const organizationData = [
                 'Skill Education',
                 'Create and Compete',
                 'Ahmad Haikal',
-                'Program untuk mendorong mahasiswa menciptakan karya, mengembangkan kemampuan, dan mempersiapkan diri mengikuti kompetisi bidang IT.',
-                'edukasi-cnc.webp'
+                'Create and Compete merupakan program kerja yang mewadahi inovasi, ide, minat, bakat, dan karya mahasiswa Informatika Unsika untuk direalisasikan melalui project yang hasilnya dipamerkan pada kegiatan-kegiatan atau disalurkan ke perlombaan. Program ini juga mendorong mahasiswa untuk meningkatkan kompetensi dan semangat berprestasi melalui pembinaan, pendampingan, serta penyaluran kemampuan ke berbagai perlombaan dan sertifikasi sesuai bidang yang diminati. CnC juga mengumumkan info lomba pada instagram @cnc_himtika.',
+                'edukasi-cnc.webp',
+                'https://www.instagram.com/cnc_himtika'
             ],
             [
                 'Skill Education',
                 'Pekan IT',
                 'Fitria',
-                'Rangkaian kegiatan kompetisi dan edukasi teknologi yang menjadi wadah aktualisasi kemampuan mahasiswa di bidang informatika.',
-                'edukasi-pekan-it.webp'
+                'Pekan IT merupakan program kerja yang mewadahi kegiatan edukasi dan kompetisi di bidang teknologi informasi. Rangkaian kegiatannya mencakup SEMANTIK: Internformatics Competition sebagai ajang kompetisi mahasiswa Informatika UNSIKA di bidang IT, serta National IT Competition (NIC) yang membuka kompetisi tingkat nasional bagi mahasiswa dari berbagai perguruan tinggi. Selain kompetisi, Pekan IT juga menghadirkan Tech Talks sebagai ruang edukasi untuk memperluas wawasan dan pengetahuan seputar perkembangan teknologi, sehingga mahasiswa dapat mengembangkan softskill, hardskill, kreativitas, serta jiwa kompetitifnya.',
+                'edukasi-pekan-it.webp',
+                'https://himtika.cs.unsika.ac.id/pekan-it'
             ],
             [
                 'College Education',
                 'Study Club',
                 'Amelia Marliana',
-                'Kelas belajar yang membantu mahasiswa Informatika memahami materi perkuliahan dan meningkatkan kemampuan akademik.',
-                'edukasi-study-club.webp'
+                'Study Club merupakan program kerja berupa kegiatan kelas belajar bersama yang berfokus pada pengembangan pengetahuan dan keterampilan di bidang IT. Program ini menjadi wadah bagi mahasiswa Informatika Unsika untuk mempelajari bidang yang diminati secara bertahap, mengembangkan kompetensi diri, serta berkolaborasi dengan mahasiswa lain yang memiliki minat serupa.',
+                'edukasi-study-club.webp',
+                'https://himtika.cs.unsika.ac.id/studyclub'
             ]
         ]
     },
 
+    // Infokom
     {
         id: 'infokom',
         type: 'division',
@@ -717,10 +739,7 @@ const organizationData = [
         departments: [
             {
                 name: 'Media Information',
-
-                description:
-                    'Mengelola publikasi kegiatan, media sosial, branding digital, dan perancangan konten HIMTIKA.',
-
+                description: 'Mengelola publikasi kegiatan, media sosial, branding digital, dan perancangan konten HIMTIKA.',
                 members: [
                     [
                         'Afif Ghazanfar',
@@ -744,10 +763,7 @@ const organizationData = [
             },
             {
                 name: 'Media Creative',
-
-                description:
-                    'Mengembangkan media informasi sesuai identitas visual HIMTIKA serta memproduksi konten desain dan video.',
-
+                description: 'Mengembangkan media informasi sesuai identitas visual HIMTIKA serta memproduksi konten desain dan video.',
                 members: [
                     [
                         'Stefanie Roria Bintang',
@@ -782,21 +798,21 @@ const organizationData = [
                 'Media Information',
                 'Always On',
                 'Muhammad Fajar Ramadhan',
-                'Program publikasi informasi kegiatan dan agenda HIMTIKA secara aktif, konsisten, dan tepat waktu melalui media digital.',
+                'Always On merupakan program kerja yang berfokus pada pengelolaan dan penyebaran informasi melalui berbagai media sosial HIMTIKA, seperti Instagram, TikTok, LinkedIn, dan YouTube. Program ini mengoptimalkan media sosial sebagai sumber informasi yang aktif dan relevan agar berbagai informasi mengenai HIMTIKA, kegiatan organisasi, serta lingkungan Informatika dapat tersampaikan kepada mahasiswa secara luas.',
                 'infokom-always-on.webp'
             ],
             [
                 'Media Information',
                 'Content Writer',
                 'Wisnu Tahta Agung Prayoga',
-                'Program perencanaan serta penulisan konten informatif untuk kebutuhan publikasi dan komunikasi HIMTIKA.',
+                'Content Writer merupakan program kerja yang bertanggung jawab dalam merancang dan menyusun konten informatif serta interaktif untuk berbagai media HIMTIKA. Program ini bekerja sama dengan Department Media Creative dalam menyiapkan konsep dan materi komunikasi, seperti caption, headline, serta konten untuk Instagram, YouTube, TikTok, dan media lainnya agar informasi dapat disampaikan secara menarik, kreatif, dan efektif.',
                 'infokom-content-writer.webp'
             ],
             [
                 'Media Creative',
                 'Desain Komunikasi Visual',
                 'Rizky Fitri Putri Awaliyah',
-                'Program pengembangan identitas visual dan produksi desain komunikasi untuk mendukung publikasi HIMTIKA.',
+                'Desain Komunikasi Visual merupakan program kerja yang berperan sebagai eksekutor berbagai kebutuhan visual HIMTIKA. Program ini mengolah materi yang telah disiapkan oleh Content Writer menjadi desain dan konten visual yang menarik, komunikatif, dan mudah dipahami sehingga informasi HIMTIKA dapat tersampaikan secara efektif kepada mahasiswa Informatika maupun audiens lainnya.',
                 'infokom-dkv.webp'
             ]
         ]
@@ -835,497 +851,11 @@ organizationData.forEach(function(item) {
                     'assets/img/proker/' + program[4],
 
                 // Isi link masing-masing program kerja di sini.
-                href: ''
+                href: program[5] || 'https://himtika.cs.unsika.ac.id/grand-design-himtika/'
             };
         });
     }
 });
-
-// ==================== DIVISION SLIDER ====================
-// const divisions = [
-//     {
-//         name: "Steering Committee",
-//         desc: "Pengarah dan pengawas organisasi",
-//         img: "assets/img/divisi/steering.png",
-//         count: 6,
-//         about: {
-//             title: "Ketua Himpunan",
-//             description: "Steering Committee merupakan badan pengarah tertinggi dalam HIMTIKA yang bertanggung jawab dalam menetapkan arah kebijakan strategis organisasi. SC bertugas mengawasi jalannya program kerja seluruh divisi dan memastikan setiap keputusan besar organisasi selaras dengan visi dan misi HIMTIKA.",
-//             bgIcon: "assets/img/icon/icon_sc.png",
-//             departments: [
-//                 {
-//                     name: "Pengawasan Kebijakan",
-//                     desc: "Mengawasi pelaksanaan kebijakan strategis serta memastikan setiap program kerja divisi berjalan sesuai arah dan tujuan organisasi.",
-//                     members: [
-//                         { photo: "assets/img/anggota/sc/1.png", firstName: "Nama", lastName: "Ketua Dept", role: "Ketua Dept Pengawasan", highlight: "Nama" },
-//                         { photo: "assets/img/anggota/sc/2.png", firstName: "Nama", lastName: "Anggota", role: "Anggota Dept Pengawasan", highlight: "Nama" }
-//                     ],
-//                     proker: [
-//                         {
-//                             title: "Monitoring Kinerja Divisi",
-//                             pic: "Nama Penanggung Jawab",
-//                             desc: "Program kerja yang berfokus pada pemantauan rutin terhadap progres dan kinerja setiap divisi, memastikan seluruh program berjalan sesuai timeline dan target yang telah ditetapkan.",
-//                             mainImg: "assets/img/proker/sc/monitoring_main.png",
-//                             thumbs: ["assets/img/proker/sc/monitoring_1.png", "assets/img/proker/sc/monitoring_2.png", "assets/img/proker/sc/monitoring_3.png"]
-//                         },
-//                         {
-//                             title: "Audit Kebijakan Organisasi",
-//                             pic: "Nama Penanggung Jawab",
-//                             desc: "Melakukan audit berkala terhadap kebijakan yang berlaku di HIMTIKA untuk memastikan relevansi dan efektivitasnya terhadap kebutuhan organisasi saat ini.",
-//                             mainImg: "assets/img/proker/sc/audit_main.png",
-//                             thumbs: ["assets/img/proker/sc/audit_1.png", "assets/img/proker/sc/audit_2.png"]
-//                         }
-//                     ]
-//                 },
-//                 {
-//                     name: "Evaluasi Strategis",
-//                     desc: "Melakukan evaluasi berkala terhadap kinerja organisasi serta merumuskan rekomendasi perbaikan untuk pengembangan HIMTIKA kedepannya.",
-//                     members: [
-//                         { photo: "assets/img/anggota/sc/3.png", firstName: "Nama", lastName: "Ketua Dept", role: "Ketua Dept Evaluasi", highlight: "Nama" },
-//                         { photo: "assets/img/anggota/sc/4.png", firstName: "Nama", lastName: "Anggota", role: "Anggota Dept Evaluasi", highlight: "Nama" }
-//                     ],
-//                     proker: [
-//                         {
-//                             title: "Evaluasi Akhir Kepengurusan",
-//                             pic: "Nama Penanggung Jawab",
-//                             desc: "Menyusun laporan evaluasi menyeluruh terhadap capaian seluruh divisi di akhir periode kepengurusan sebagai dasar perbaikan periode berikutnya.",
-//                             mainImg: "assets/img/proker/sc/evaluasi_main.png",
-//                             thumbs: ["assets/img/proker/sc/evaluasi_1.png", "assets/img/proker/sc/evaluasi_2.png"]
-//                         }
-//                     ]
-//                 }
-//             ],
-//             kadiv: {
-//                 photo: "assets/img/divisi/kahim.png",
-//                 firstName: "Nama",
-//                 lastName: "Ketua SC",
-//                 role: "Ketua Steering Committee",
-//                 scale: 0.999,
-//                 posY: "5%"
-//             },
-//             wakil: {
-//                 title: "Wakil Ketua",
-//                 description: "Merupakan penanggung jawab koordinator bidang. Bidang data dan pustaka, ketatausahaan dan penerangan serta hubungan organisasi dengan pihak eksternal organisasi.",
-//                 peranLabel: "Peran Wakil Ketua Himpunan yaitu:",
-//                 peran: [
-//                     { highlight: "Mendampingi", text: "Kahim" },
-//                     { highlight: "Menggantikan", text: "ketua" },
-//                     { highlight: "Mengkoordinasi", text: "bidang" },
-//                     { highlight: "Mengawasi", text: "program" }
-//                 ],
-//                 photo: "assets/img/divisi/wakil_ketua.png",
-//                 firstName: "Indyra",
-//                 lastName: "Putri Pratama",
-//                 role: "Wakil Ketua Himpunan",
-//                 scale: 1.15,
-//                 posY: "5%"
-//             },
-//             sekretaris: {
-//                 label: "Administrasi",
-//                 title: "Sekretaris",
-//                 description: "Merupakan penanggung jawab dan koordinator di bidang administrasi HIMTIKA.",
-//                 peranLabel: "Peran Sekretaris yaitu:",
-//                 peran: [
-//                     { highlight: "Memimpin", text: "HIMTIKA" },
-//                     { highlight: "Mengkoordinasi", text: "kesekretariatan" },
-//                     { highlight: "Menetapkan", text: "kebijakan" },
-//                     { highlight: "Bertanggung jawab", text: "administrasi" }
-//                 ],
-//                 members: [
-//                     { photo: "assets/img/anggota/sc/5.png", firstName: "Nama", lastName: "Sekretaris Umum", role: "Sekretaris Umum HIMTIKA", highlight: "Nama" },
-//                     { photo: "assets/img/anggota/sc/6.png", firstName: "Nama", lastName: "Wakil Sekretaris", role: "Wakil Sekretaris Umum", highlight: "Nama" }
-//                 ]
-//             },
-//             bendahara: {
-//                 label: "Keuangan",
-//                 title: "Bendahara",
-//                 description: "Merupakan penanggung jawab dan koordinator di bidang keuangan HIMTIKA.",
-//                 peranLabel: "Peran Bendahara yaitu:",
-//                 peran: [
-//                     { highlight: "Memimpin", text: "HIMTIKA" },
-//                     { highlight: "Mengkoordinasi", text: "pengurus" },
-//                     { highlight: "Menetapkan", text: "kebijakan" },
-//                     { highlight: "Bertanggung jawab", text: "kegiatan" }
-//                 ],
-//                 members: [
-//                     { photo: "assets/img/anggota/sc/7.png", firstName: "Nama", lastName: "Bendahara Umum", role: "Bendahara Umum HIMTIKA", highlight: "Nama" },
-//                     { photo: "assets/img/anggota/sc/8.png", firstName: "Nama", lastName: "Wakil Bendahara", role: "Wakil Bendahara Umum", highlight: "Nama" }
-//                 ]
-//             }
-//         }
-//     },
-//     {
-//         name: "RnD",
-//         desc: "Inovasi dan pengembangan teknologi",
-//         img: "assets/img/divisi/rnd.png",
-//         count: 8,
-//         about: {
-//             title: "Divisi RnD",
-//             description: "Divisi Research and Development (RnD) merupakan divisi yang menjadi ujung tombak dalam penerapan teknologi informasi. Divisi ini fokus pada peningkatan kualitas di lingkungan HIMTIKA dan program studi Informatika UNSIKA. Selain itu, RnD juga berperan sebagai IT Support untuk mendukung optimalisasi kinerja HIMTIKA.",
-//             bgIcon: "assets/img/icon/icon_rnd.png",
-//             departments: [
-//                 {
-//                     name: "Research Development",
-//                     desc: "Mengembangkan ide, melakukan riset, serta merancang inovasi dan solusi untuk pengembangan produk maupun layanan.",
-//                     members: [
-//                         { photo: "assets/img/divisi/kadiv_rnd.png", firstName: "Raika", lastName: "Maulana Dwi Putra", role: "Ketua Divisi RnD", highlight: "Raika" },
-//                         { photo: "assets/img/anggota/rnd/rafisyah.png", firstName: "M", lastName: "Rafisyah Rizkiyawan", role: "Ketua Dept Research", highlight: "Rafisyah" },
-//                         { photo: "assets/img/anggota/rnd/rafli.png", firstName: "Rafli", lastName: "Rizqi Fadillah", role: "Ketua Dept Product", highlight: "Rafli" },
-//                         { photo: "assets/img/anggota/rnd/ali.png", firstName: "Mohammed Ali", lastName: "Irsyad Ginting", role: "Anggota Dept Research", highlight: "Irsyad" }
-//                     ],
-//                     proker: [
-//                         {
-//                             title: "Software House",
-//                             pic: "Nanang Saepudin",
-//                             desc: "Software House adalah program kerja yang berfokus pada penelitian dan pengembangan produk digital HIMTIKA berupa website dan aplikasi mobile. Program ini menjadi wadah bagi mahasiswa Informatika untuk menyampaikan ide atau kebutuhan yang kemudian dianalisis dan dikembangkan bersama HIMTIKA Software Development menjadi produk digital yang bermanfaat.",
-//                             mainImg: "assets/img/proker/rnd/software_house_main.png",
-//                             thumbs: [
-//                                 "assets/img/proker/rnd/software_house_1.png",
-//                                 "assets/img/proker/rnd/software_house_2.png",
-//                                 "assets/img/proker/rnd/software_house_3.png"
-//                             ]
-//                         },
-//                         {
-//                             title: "IT Support",
-//                             pic: "Nama Penanggung Jawab",
-//                             desc: "Menyediakan dukungan teknis kepada seluruh divisi HIMTIKA terkait perangkat, jaringan, dan sistem digital agar kegiatan organisasi berjalan lancar tanpa kendala teknis.",
-//                             mainImg: "assets/img/proker/rnd/it_support_main.png",
-//                             thumbs: ["assets/img/proker/rnd/it_support_1.png", "assets/img/proker/rnd/it_support_2.png"]
-//                         },
-//                         {
-//                             title: "Riset Teknologi Terapan",
-//                             pic: "Nama Penanggung Jawab",
-//                             desc: "Melakukan riset mengenai tren dan kebutuhan teknologi terapan yang relevan untuk diterapkan dalam lingkungan HIMTIKA dan program studi Informatika.",
-//                             mainImg: "assets/img/proker/rnd/riset_main.png",
-//                             thumbs: ["assets/img/proker/rnd/riset_1.png", "assets/img/proker/rnd/riset_2.png", "assets/img/proker/rnd/riset_3.png"]
-//                         }
-//                     ]
-//                 },
-//                 {
-//                     name: "Product Development",
-//                     desc: "Merancang, membangun, dan menyempurnakan produk digital HIMTIKA mulai dari konsep hingga implementasi yang siap digunakan.",
-//                     members: [
-//                         { photo: "assets/img/divisi/rnd_card.png", firstName: "Nama", lastName: "Ketua Dept", role: "Ketua Dept Product", highlight: "Nama" },
-//                         { photo: "assets/img/divisi/rnd_card.png", firstName: "Nama", lastName: "Anggota", role: "Anggota Dept Product", highlight: "Nama" },
-//                         { photo: "assets/img/divisi/rnd_card.png", firstName: "Nama", lastName: "Anggota", role: "Anggota Dept Product", highlight: "Nama" },
-//                         { photo: "assets/img/divisi/rnd_card.png", firstName: "Nama", lastName: "Anggota", role: "Anggota Dept Product", highlight: "Nama" }
-//                     ],
-//                     proker: [
-//                         {
-//                             title: "UI/UX Design Sprint",
-//                             pic: "Nama Penanggung Jawab",
-//                             desc: "Merancang antarmuka dan pengalaman pengguna untuk seluruh produk digital HIMTIKA melalui proses design sprint yang terstruktur dan kolaboratif.",
-//                             mainImg: "assets/img/proker/rnd/uiux_main.png",
-//                             thumbs: ["assets/img/proker/rnd/uiux_1.png", "assets/img/proker/rnd/uiux_2.png"]
-//                         },
-//                         {
-//                             title: "Maintenance & Update Sistem",
-//                             pic: "Nama Penanggung Jawab",
-//                             desc: "Melakukan pemeliharaan rutin dan pembaruan berkala pada produk digital HIMTIKA yang telah diluncurkan agar tetap optimal dan aman digunakan.",
-//                             mainImg: "assets/img/proker/rnd/maintenance_main.png",
-//                             thumbs: ["assets/img/proker/rnd/maintenance_1.png", "assets/img/proker/rnd/maintenance_2.png"]
-//                         }
-//                     ]
-//                 }
-//             ],
-//             kadiv: {
-//                 photo: "assets/img/divisi/kadiv_rnd.png",
-//                 firstName: "Raika",
-//                 lastName: "Maulana Dwi Putra",
-//                 role: "Ketua Divisi RnD",
-//                 scale: 1.35,
-//                 posY: "0%"
-//             }
-//         }
-//     },
-//     {
-//         name: "Infokom",
-//         desc: "Media dan informasi digital",
-//         img: "assets/img/divisi/infokom.png",
-//         count: 7,
-//         about: {
-//             title: "Divisi Infokom",
-//             description: "Divisi Informasi dan Komunikasi (Infokom) bertanggung jawab dalam mengelola seluruh media komunikasi HIMTIKA kepada publik dan anggota. Divisi ini memastikan setiap informasi tersampaikan secara efektif, kreatif, dan tepat sasaran melalui berbagai platform digital.",
-//             bgIcon: "assets/img/icon/icon_infokom.png",
-//             departments: [
-//                 {
-//                     name: "Media Sosial & Konten",
-//                     desc: "Mengelola konten dan strategi media sosial HIMTIKA agar setiap informasi tersampaikan secara kreatif dan menarik.",
-//                     members: [
-//                         { photo: "assets/img/anggota/infokom/1.png", firstName: "Nama", lastName: "Ketua Dept", role: "Ketua Dept Media Sosial", highlight: "Nama" },
-//                         { photo: "assets/img/anggota/infokom/2.png", firstName: "Nama", lastName: "Anggota", role: "Anggota Dept Media Sosial", highlight: "Nama" },
-//                         { photo: "assets/img/anggota/infokom/3.png", firstName: "Nama", lastName: "Anggota", role: "Anggota Dept Media Sosial", highlight: "Nama" }
-//                     ],
-//                     proker: [
-//                         {
-//                             title: "Konten Kreatif HIMTIKA",
-//                             pic: "Nama Penanggung Jawab",
-//                             desc: "Memproduksi konten kreatif secara berkala untuk media sosial HIMTIKA guna meningkatkan engagement dan menyampaikan informasi secara menarik kepada anggota dan publik.",
-//                             mainImg: "assets/img/proker/infokom/konten_main.png",
-//                             thumbs: ["assets/img/proker/infokom/konten_1.png", "assets/img/proker/infokom/konten_2.png", "assets/img/proker/infokom/konten_3.png"]
-//                         },
-//                         {
-//                             title: "Live Report & Takeover",
-//                             pic: "Nama Penanggung Jawab",
-//                             desc: "Menyajikan laporan langsung melalui media sosial pada setiap kegiatan besar HIMTIKA agar seluruh anggota dapat mengikuti perkembangan acara secara real-time.",
-//                             mainImg: "assets/img/proker/infokom/livereport_main.png",
-//                             thumbs: ["assets/img/proker/infokom/livereport_1.png", "assets/img/proker/infokom/livereport_2.png"]
-//                         }
-//                     ]
-//                 },
-//                 {
-//                     name: "Jurnalistik & Dokumentasi",
-//                     desc: "Mendokumentasikan setiap kegiatan HIMTIKA serta menyusun liputan dan publikasi yang informatif bagi seluruh anggota.",
-//                     members: [
-//                         { photo: "assets/img/anggota/infokom/4.png", firstName: "Nama", lastName: "Ketua Dept", role: "Ketua Dept Jurnalistik", highlight: "Nama" },
-//                         { photo: "assets/img/anggota/infokom/5.png", firstName: "Nama", lastName: "Anggota", role: "Anggota Dept Jurnalistik", highlight: "Nama" }
-//                     ],
-//                     proker: [
-//                         {
-//                             title: "Dokumentasi Kegiatan HIMTIKA",
-//                             pic: "Nama Penanggung Jawab",
-//                             desc: "Mengabadikan setiap momen kegiatan HIMTIKA dalam bentuk foto dan video sebagai arsip organisasi dan bahan publikasi media sosial.",
-//                             mainImg: "assets/img/proker/infokom/dokumentasi_main.png",
-//                             thumbs: ["assets/img/proker/infokom/dokumentasi_1.png", "assets/img/proker/infokom/dokumentasi_2.png"]
-//                         }
-//                     ]
-//                 }
-//             ],
-//             kadiv: {
-//                 photo: "assets/img/divisi/kadiv_infokom.png",
-//                 firstName: "Nama",
-//                 lastName: "Ketua Infokom",
-//                 role: "Ketua Divisi Infokom",
-//                 scale: 1.1,
-//                 posY: "0%"
-//             }
-//         }
-//     },
-//     {
-//         name: "Internal",
-//         desc: "Manajemen dan koordinasi internal",
-//         img: "assets/img/divisi/internal.png",
-//         count: 5,
-//         about: {
-//             title: "Divisi Internal",
-//             description: "Divisi Internal berperan sebagai tulang punggung keorganisasian HIMTIKA. Divisi ini mengelola administrasi, keuangan, serta kesejahteraan seluruh anggota HIMTIKA agar iklim organisasi tetap kondusif, solid, dan berkelanjutan.",
-//             bgIcon: "assets/img/icon/icon_internal.png",
-//             departments: [
-//                 {
-//                     name: "Administrasi & Kesekretariatan",
-//                     desc: "Mengelola seluruh kebutuhan administrasi dan kesekretariatan agar tata kelola organisasi tetap rapi dan terstruktur.",
-//                     members: [
-//                         { photo: "assets/img/anggota/internal/1.png", firstName: "Nama", lastName: "Ketua Dept", role: "Ketua Dept Administrasi", highlight: "Nama" },
-//                         { photo: "assets/img/anggota/internal/2.png", firstName: "Nama", lastName: "Anggota", role: "Anggota Dept Administrasi", highlight: "Nama" }
-//                     ],
-//                     proker: [
-//                         {
-//                             title: "Pengarsipan Surat & Dokumen",
-//                             pic: "Nama Penanggung Jawab",
-//                             desc: "Mengelola dan mengarsipkan seluruh surat masuk, surat keluar, serta dokumen penting organisasi secara rapi dan terstruktur untuk memudahkan akses di kemudian hari.",
-//                             mainImg: "assets/img/proker/internal/arsip_main.png",
-//                             thumbs: ["assets/img/proker/internal/arsip_1.png", "assets/img/proker/internal/arsip_2.png"]
-//                         }
-//                     ]
-//                 },
-//                 {
-//                     name: "Keuangan & Bendahara",
-//                     desc: "Mengelola keuangan organisasi secara transparan dan akuntabel untuk mendukung seluruh program kerja HIMTIKA.",
-//                     members: [
-//                         { photo: "assets/img/anggota/internal/3.png", firstName: "Nama", lastName: "Ketua Dept", role: "Ketua Dept Keuangan", highlight: "Nama" },
-//                         { photo: "assets/img/anggota/internal/4.png", firstName: "Nama", lastName: "Anggota", role: "Anggota Dept Keuangan", highlight: "Nama" }
-//                     ],
-//                     proker: [
-//                         {
-//                             title: "Laporan Keuangan Berkala",
-//                             pic: "Nama Penanggung Jawab",
-//                             desc: "Menyusun dan mempublikasikan laporan keuangan organisasi secara berkala sebagai bentuk transparansi kepada seluruh anggota HIMTIKA.",
-//                             mainImg: "assets/img/proker/internal/laporan_main.png",
-//                             thumbs: ["assets/img/proker/internal/laporan_1.png", "assets/img/proker/internal/laporan_2.png"]
-//                         },
-//                         {
-//                             title: "Penggalangan Dana Mandiri",
-//                             pic: "Nama Penanggung Jawab",
-//                             desc: "Menjalankan inisiatif penggalangan dana mandiri melalui kewirausahaan kecil untuk mendukung kas organisasi secara berkelanjutan.",
-//                             mainImg: "assets/img/proker/internal/danamandiri_main.png",
-//                             thumbs: ["assets/img/proker/internal/danamandiri_1.png", "assets/img/proker/internal/danamandiri_2.png"]
-//                         }
-//                     ]
-//                 }
-//             ],
-//             kadiv: {
-//                 photo: "assets/img/divisi/kadiv_internal.png",
-//                 firstName: "Nama",
-//                 lastName: "Ketua Internal",
-//                 role: "Ketua Divisi Internal",
-//                 scale: 1.15,
-//                 posY: "5%"
-//             }
-//         }
-//     },
-//     {
-//         name: "Relasi",
-//         desc: "Kerjasama dan hubungan eksternal",
-//         img: "assets/img/divisi/relasi.png",
-//         count: 6,
-//         about: {
-//             title: "Divisi Relasi",
-//             description: "Divisi Relasi menjalin dan mengembangkan kerjasama strategis antara HIMTIKA dengan berbagai pihak eksternal, mulai dari perusahaan, institusi pendidikan, komunitas teknologi, hingga organisasi mahasiswa lainnya. Divisi ini membuka peluang kolaborasi yang bermanfaat bagi seluruh anggota.",
-//             bgIcon: "assets/img/icon/icon_relasi.png",
-//             departments: [
-//                 {
-//                     name: "Hubungan Eksternal",
-//                     desc: "Menjalin komunikasi dan kerjasama dengan pihak eksternal untuk membuka peluang kolaborasi bagi HIMTIKA.",
-//                     members: [
-//                         { photo: "assets/img/anggota/relasi/1.png", firstName: "Nama", lastName: "Ketua Dept", role: "Ketua Dept Hubungan Eksternal", highlight: "Nama" },
-//                         { photo: "assets/img/anggota/relasi/2.png", firstName: "Nama", lastName: "Anggota", role: "Anggota Dept Hubungan Eksternal", highlight: "Nama" },
-//                         { photo: "assets/img/anggota/relasi/3.png", firstName: "Nama", lastName: "Anggota", role: "Anggota Dept Hubungan Eksternal", highlight: "Nama" },
-//                         { photo: "assets/img/anggota/relasi/4.png", firstName: "Nama", lastName: "Anggota", role: "Anggota Dept Hubungan Eksternal", highlight: "Nama" }
-//                     ],
-//                     proker: [
-//                         {
-//                             title: "Kunjungan Studi Banding",
-//                             pic: "Nama Penanggung Jawab",
-//                             desc: "Mengadakan kunjungan studi banding ke himpunan mahasiswa Informatika di kampus lain untuk bertukar wawasan dan memperluas jejaring organisasi.",
-//                             mainImg: "assets/img/proker/relasi/studibanding_main.png",
-//                             thumbs: ["assets/img/proker/relasi/studibanding_1.png", "assets/img/proker/relasi/studibanding_2.png"]
-//                         },
-//                         {
-//                             title: "Kerjasama Antar Himpunan",
-//                             pic: "Nama Penanggung Jawab",
-//                             desc: "Membangun hubungan kerjasama jangka panjang dengan himpunan mahasiswa Informatika dari berbagai universitas untuk kegiatan kolaboratif.",
-//                             mainImg: "assets/img/proker/relasi/kerjasama_main.png",
-//                             thumbs: ["assets/img/proker/relasi/kerjasama_1.png", "assets/img/proker/relasi/kerjasama_2.png"]
-//                         },
-//                         {
-//                             title: "Roadshow Industri",
-//                             pic: "Nama Penanggung Jawab",
-//                             desc: "Mengunjungi perusahaan teknologi untuk membangun relasi dan membuka peluang magang maupun kerjasama bagi anggota HIMTIKA.",
-//                             mainImg: "assets/img/proker/relasi/roadshow_main.png",
-//                             thumbs: ["assets/img/proker/relasi/roadshow_1.png", "assets/img/proker/relasi/roadshow_2.png"]
-//                         }
-//                     ]
-//                 },
-//                 {
-//                     name: "Kemitraan & Sponsorship",
-//                     desc: "Membangun kemitraan strategis dan mencari peluang sponsorship untuk mendukung kelancaran kegiatan HIMTIKA.",
-//                     members: [
-//                         { photo: "assets/img/anggota/relasi/5.png", firstName: "Nama", lastName: "Ketua Dept", role: "Ketua Dept Kemitraan", highlight: "Nama" },
-//                         { photo: "assets/img/anggota/relasi/6.png", firstName: "Nama", lastName: "Anggota", role: "Anggota Dept Kemitraan", highlight: "Nama" }
-//                     ],
-//                     proker: [
-//                         {
-//                             title: "Penjajakan Sponsorship Event",
-//                             pic: "Nama Penanggung Jawab",
-//                             desc: "Mencari dan menjalin kemitraan dengan sponsor untuk mendukung pendanaan setiap event besar yang diselenggarakan HIMTIKA.",
-//                             mainImg: "assets/img/proker/relasi/sponsorship_main.png",
-//                             thumbs: ["assets/img/proker/relasi/sponsorship_1.png", "assets/img/proker/relasi/sponsorship_2.png"]
-//                         }
-//                     ]
-//                 }
-//             ],
-//             kadiv: {
-//                 photo: "assets/img/divisi/kadiv_relasi.png",
-//                 firstName: "Nama",
-//                 lastName: "Ketua Relasi",
-//                 role: "Ketua Divisi Relasi",
-//                 scale: 1.1,
-//                 posY: "0%"
-//             }
-//         }
-//     },
-//     {
-//         name: "Edukasi",
-//         desc: "Pengembangan ilmu dan workshop",
-//         img: "assets/img/divisi/edukasi.png",
-//         count: 7,
-//         about: {
-//             title: "Divisi Edukasi",
-//             description: "Divisi Edukasi berkomitmen meningkatkan kapasitas akademik dan non-akademik anggota HIMTIKA melalui berbagai program pembelajaran. Divisi ini menyelenggarakan workshop, seminar, study club, dan pelatihan yang relevan dengan kebutuhan mahasiswa Informatika di era digital.",
-//             bgIcon: "assets/img/icon/icon_edukasi.png",
-//             departments: [
-//                 {
-//                     name: "Akademik & Pelatihan",
-//                     desc: "Menyelenggarakan workshop, seminar, dan pelatihan untuk meningkatkan kapasitas akademik mahasiswa Informatika.",
-//                     members: [
-//                         { photo: "assets/img/anggota/edukasi/1.png", firstName: "Nama", lastName: "Ketua Dept", role: "Ketua Dept Akademik", highlight: "Nama" },
-//                         { photo: "assets/img/anggota/edukasi/2.png", firstName: "Nama", lastName: "Anggota", role: "Anggota Dept Akademik", highlight: "Nama" },
-//                         { photo: "assets/img/anggota/edukasi/3.png", firstName: "Nama", lastName: "Anggota", role: "Anggota Dept Akademik", highlight: "Nama" }
-//                     ],
-//                     proker: [
-//                         {
-//                             title: "Study Club Informatika",
-//                             pic: "Nama Penanggung Jawab",
-//                             desc: "Mengadakan kelompok belajar rutin bagi mahasiswa Informatika untuk memperdalam materi perkuliahan dan mempersiapkan diri menghadapi dunia kerja.",
-//                             mainImg: "assets/img/proker/edukasi/studyclub_main.png",
-//                             thumbs: ["assets/img/proker/edukasi/studyclub_1.png", "assets/img/proker/edukasi/studyclub_2.png", "assets/img/proker/edukasi/studyclub_3.png"]
-//                         },
-//                         {
-//                             title: "Seminar & Workshop Teknologi",
-//                             pic: "Nama Penanggung Jawab",
-//                             desc: "Menyelenggarakan seminar dan workshop bertema teknologi terkini untuk menambah wawasan dan keterampilan praktis mahasiswa Informatika.",
-//                             mainImg: "assets/img/proker/edukasi/seminar_main.png",
-//                             thumbs: ["assets/img/proker/edukasi/seminar_1.png", "assets/img/proker/edukasi/seminar_2.png"]
-//                         }
-//                     ]
-//                 },
-//                 {
-//                     name: "Kompetisi & Pengembangan",
-//                     desc: "Mendorong partisipasi anggota dalam berbagai kompetisi serta program pengembangan diri di bidang teknologi.",
-//                     members: [
-//                         { photo: "assets/img/anggota/edukasi/4.png", firstName: "Nama", lastName: "Ketua Dept", role: "Ketua Dept Kompetisi", highlight: "Nama" },
-//                         { photo: "assets/img/anggota/edukasi/5.png", firstName: "Nama", lastName: "Anggota", role: "Anggota Dept Kompetisi", highlight: "Nama" }
-//                     ],
-//                     proker: [
-//                         {
-//                             title: "Bootcamp Kompetitif",
-//                             pic: "Nama Penanggung Jawab",
-//                             desc: "Mempersiapkan anggota HIMTIKA mengikuti berbagai kompetisi teknologi tingkat nasional melalui pelatihan intensif dan terarah.",
-//                             mainImg: "assets/img/proker/edukasi/bootcamp_main.png",
-//                             thumbs: ["assets/img/proker/edukasi/bootcamp_1.png", "assets/img/proker/edukasi/bootcamp_2.png"]
-//                         },
-//                         {
-//                             title: "Pendampingan Lomba",
-//                             pic: "Nama Penanggung Jawab",
-//                             desc: "Memberikan pendampingan teknis dan strategi kepada tim yang akan mengikuti lomba programming maupun hackathon.",
-//                             mainImg: "assets/img/proker/edukasi/pendampingan_main.png",
-//                             thumbs: ["assets/img/proker/edukasi/pendampingan_1.png", "assets/img/proker/edukasi/pendampingan_2.png"]
-//                         },
-//                         {
-//                             title: "Sertifikasi Kompetensi",
-//                             pic: "Nama Penanggung Jawab",
-//                             desc: "Memfasilitasi anggota HIMTIKA untuk mengikuti program sertifikasi kompetensi di bidang teknologi informasi guna meningkatkan daya saing.",
-//                             mainImg: "assets/img/proker/edukasi/sertifikasi_main.png",
-//                             thumbs: ["assets/img/proker/edukasi/sertifikasi_1.png", "assets/img/proker/edukasi/sertifikasi_2.png"]
-//                         },
-//                         {
-//                             title: "Coding Challenge Internal",
-//                             pic: "Nama Penanggung Jawab",
-//                             desc: "Mengadakan kompetisi coding internal secara rutin untuk mengasah kemampuan logika dan pemrograman anggota HIMTIKA secara berkelanjutan.",
-//                             mainImg: "assets/img/proker/edukasi/coding_main.png",
-//                             thumbs: ["assets/img/proker/edukasi/coding_1.png", "assets/img/proker/edukasi/coding_2.png"]
-//                         },
-//                         {
-//                             title: "Hackathon HIMTIKA",
-//                             pic: "Nama Penanggung Jawab",
-//                             desc: "Menyelenggarakan hackathon tahunan sebagai wadah bagi mahasiswa Informatika untuk berinovasi menciptakan solusi digital dalam waktu singkat.",
-//                             mainImg: "assets/img/proker/edukasi/hackathon_main.png",
-//                             thumbs: ["assets/img/proker/edukasi/hackathon_1.png", "assets/img/proker/edukasi/hackathon_2.png", "assets/img/proker/edukasi/hackathon_3.png"]
-//                         }
-//                     ]
-//                 }
-//             ],
-//             kadiv: {
-//                 photo: "assets/img/divisi/kadiv_edukasi.png",
-//                 firstName: "Nama",
-//                 lastName: "Ketua Edukasi",
-//                 role: "Ketua Divisi Edukasi",
-//                 scale: 1.15,
-//                 posY: "5%"
-//             }
-//         }
-//     }
-// ];
 
 let currentIndex = 0;
 
@@ -2810,7 +2340,7 @@ function updateProkerContent(item) {
         title.textContent = proker.title;
     }
     if (pic) {
-        pic.textContent = `Penanggung Jawab: ${proker.pic}`;
+        pic.textContent = `${proker.pic}`;
     }
     if (description) {
         description.textContent = proker.description;
