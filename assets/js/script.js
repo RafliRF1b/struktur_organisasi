@@ -379,7 +379,7 @@ const organizationData = [
                 'Ridho Mughni Nursila',
                 'Dies Natalis HIMTIKA merupakan rangkaian kegiatan untuk memperingati hari berdirinya HIMTIKA ke-9 pada 16 Oktober 2017 sekaligus menjadi momentum mempererat hubungan dan rasa kekeluargaan di lingkungan Informatika. Kegiatan ini menjadi wadah untuk membangun kebersamaan, solidaritas, dan silaturahmi antara pengurus, anggota, alumni, serta mahasiswa Informatika lintas angkatan.',
                 'internal-dies-natalis.webp',
-                'https://www.instagram.com/diesnatalis.himtika/'
+                'https://himtika.cs.unsika.ac.id/diesnatalis/'
             ],
             [
                 'Human Resource Development',
@@ -502,7 +502,7 @@ const organizationData = [
                 'Marssello Hotasi Marpaung',
                 'Corporation merupakan program kerja yang berfokus pada pengembangan, produksi, dan pemasaran berbagai produk untuk memperoleh pemasukan tambahan bagi HIMTIKA. Produk yang dipasarkan dapat berupa produk digital maupun non-digital yang dikembangkan melalui kolaborasi dengan Divisi Research and Development, Information and Communication, maupun Department Public Marketing sesuai kebutuhan produk yang akan dipasarkan.',
                 'relasi-corporation.webp',
-                'https://www.instagram.com/corporation_himtika/'
+                'https://himtika.cs.unsika.ac.id/corporation/'
             ],
             [
                 'Public Relation',
@@ -518,6 +518,7 @@ const organizationData = [
                 'Al Fazran Dwi Nugraha',
                 'Kemitraan merupakan program kerja yang berfokus pada pembangunan kerja sama antara HIMTIKA dengan perusahaan atau badan usaha. Melalui pencarian, pendekatan, dan negosiasi dengan mitra potensial, program ini berupaya membangun hubungan kerja sama yang saling menguntungkan sekaligus membantu mengurangi pengeluaran dan mendukung kebutuhan finansial berbagai kegiatan HIMTIKA.',
                 'relasi-kemitraan.webp',
+                'https://youtu.be/iNu6ZJkP6qY?si=ZPeNFNF9c-eRHxrr'
             ]
         ]
     },
@@ -693,7 +694,7 @@ const organizationData = [
                 'Ahmad Haikal',
                 'Create and Compete merupakan program kerja yang mewadahi inovasi, ide, minat, bakat, dan karya mahasiswa Informatika Unsika untuk direalisasikan melalui project yang hasilnya dipamerkan pada kegiatan-kegiatan atau disalurkan ke perlombaan. Program ini juga mendorong mahasiswa untuk meningkatkan kompetensi dan semangat berprestasi melalui pembinaan, pendampingan, serta penyaluran kemampuan ke berbagai perlombaan dan sertifikasi sesuai bidang yang diminati. CnC juga mengumumkan info lomba pada instagram @cnc_himtika.',
                 'edukasi-cnc.webp',
-                'https://www.instagram.com/cnc_himtika'
+                'https://himtika.cs.unsika.ac.id/cnc/'
             ],
             [
                 'Skill Education',
@@ -701,7 +702,7 @@ const organizationData = [
                 'Fitria',
                 'Pekan IT merupakan program kerja yang mewadahi kegiatan edukasi dan kompetisi di bidang teknologi informasi. Rangkaian kegiatannya mencakup SEMANTIK: Internformatics Competition sebagai ajang kompetisi mahasiswa Informatika UNSIKA di bidang IT, serta National IT Competition (NIC) yang membuka kompetisi tingkat nasional bagi mahasiswa dari berbagai perguruan tinggi. Selain kompetisi, Pekan IT juga menghadirkan Tech Talks sebagai ruang edukasi untuk memperluas wawasan dan pengetahuan seputar perkembangan teknologi, sehingga mahasiswa dapat mengembangkan softskill, hardskill, kreativitas, serta jiwa kompetitifnya.',
                 'edukasi-pekan-it.webp',
-                'https://himtika.cs.unsika.ac.id/pekan-it'
+                'https://himtika.cs.unsika.ac.id/pekan-it/'
             ],
             [
                 'College Education',
@@ -709,7 +710,7 @@ const organizationData = [
                 'Amelia Marliana',
                 'Study Club merupakan program kerja berupa kegiatan kelas belajar bersama yang berfokus pada pengembangan pengetahuan dan keterampilan di bidang IT. Program ini menjadi wadah bagi mahasiswa Informatika Unsika untuk mempelajari bidang yang diminati secara bertahap, mengembangkan kompetensi diri, serta berkolaborasi dengan mahasiswa lain yang memiliki minat serupa.',
                 'edukasi-study-club.webp',
-                'https://himtika.cs.unsika.ac.id/studyclub'
+                'https://himtika.cs.unsika.ac.id/studyclub/'
             ]
         ]
     },
